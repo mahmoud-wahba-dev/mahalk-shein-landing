@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محلك - شي إن | منصة أتمتة التجارة الإلكترونية</title>
+  <meta name="description" content="منصة أتمتة التجارة الإلكترونية الأولى في السعودية. استورد المنتجات، زامن الأسعار والمخزون، وأتمم الطلبات تلقائياً.">
+  
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./styles.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            border: 'hsl(var(--border))',
+            background: 'hsl(var(--background))',
+            foreground: 'hsl(var(--foreground))',
+            primary: {
+              DEFAULT: 'hsl(var(--primary))',
+              foreground: 'hsl(var(--primary-foreground))',
+            },
+            secondary: {
+              DEFAULT: 'hsl(var(--secondary))',
+              foreground: 'hsl(var(--secondary-foreground))',
+            },
+            muted: {
+              DEFAULT: 'hsl(var(--muted))',
+              foreground: 'hsl(var(--muted-foreground))',
+            },
+            accent: {
+              DEFAULT: 'hsl(var(--accent))',
+              foreground: 'hsl(var(--accent-foreground))',
+            },
+            card: {
+              DEFAULT: 'hsl(var(--card))',
+              foreground: 'hsl(var(--card-foreground))',
+            },
+            destructive: {
+              DEFAULT: 'hsl(var(--destructive))',
+              foreground: 'hsl(var(--destructive-foreground))',
+            },
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="min-h-screen">
+  
+  <!-- ==================== NAVBAR ==================== -->
+  <nav id="navbar" class="fixed top-0 right-0 left-0 z-50 transition-all duration-300 bg-transparent py-5">
+    <div class="container mx-auto px-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3">
+        <img src="./assets/logo.png" alt="محلك - شي إن" class="h-10 w-auto">
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="#hero" class="text-foreground/80 hover:text-primary transition-colors font-medium">الرئيسية</a>
+        <a href="#features" class="text-foreground/80 hover:text-primary transition-colors font-medium">المميزات</a>
+        <a href="#how-it-works" class="text-foreground/80 hover:text-primary transition-colors font-medium">كيف نعمل</a>
+        <a href="#integrations" class="text-foreground/80 hover:text-primary transition-colors font-medium">التكاملات</a>
+        <a href="#testimonials" class="text-foreground/80 hover:text-primary transition-colors font-medium">آراء العملاء</a>
+      </div>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-4">
+        <button id="dark-mode-toggle" class="p-2 rounded-lg hover:bg-muted transition-colors" aria-label="Toggle dark mode">
+          <i id="sun-icon" data-lucide="sun" class="w-5 h-5" style="display: none;"></i>
+          <i id="moon-icon" data-lucide="moon" class="w-5 h-5"></i>
+        </button>
+
+        <a href="#cta" class="hidden md:inline-flex btn-hero !py-2.5 !px-6 !text-base">
+          ابدأ مجاناً
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors" aria-label="Toggle menu">
+          <i id="menu-icon" data-lucide="menu" class="w-6 h-6"></i>
+          <i id="close-icon" data-lucide="x" class="w-6 h-6" style="display: none;"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu glass">
+      <div class="container mx-auto px-4 py-6 flex flex-col gap-4">
+        <a href="#hero" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">الرئيسية</a>
+        <a href="#features" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">المميزات</a>
+        <a href="#how-it-works" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">كيف نعمل</a>
+        <a href="#integrations" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">التكاملات</a>
+        <a href="#testimonials" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">آراء العملاء</a>
+        <a href="#cta" class="btn-hero text-center mt-2">ابدأ مجاناً</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="hero" class="relative min-h-screen flex items-center bg-gradient-hero overflow-hidden pt-24">
+    <!-- Background decorative elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <!-- Content -->
+        <div class="text-center lg:text-right order-2 lg:order-1">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6 fade-target" data-delay="0.1">
+            <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+            <span class="text-sm font-medium">منصة أتمتة التجارة الإلكترونية #1</span>
+          </div>
+
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 fade-target" data-delay="0.2">
+            أتمتة متجرك بالكامل
+            <br>
+            <span class="text-gradient">بنقرة واحدة</span>
+          </h1>
+
+          <p class="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg mx-auto lg:mx-0 fade-target" data-delay="0.3">
+            استورد المنتجات، زامن الأسعار والمخزون، وأتمم الطلبات تلقائياً.
+            كل ذلك من مكان واحد.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start fade-target" data-delay="0.4">
+            <a href="#cta" class="btn-hero">
+              ابدأ تجربتك المجانية
+              <i data-lucide="arrow-left" class="w-5 h-5"></i>
+            </a>
+            <button class="btn-hero-outline group">
+              <i data-lucide="play" class="w-5 h-5 transition-transform group-hover:scale-110"></i>
+              شاهد كيف يعمل
+            </button>
+          </div>
+
+          <!-- Trust badges -->
+          <div class="mt-12 flex flex-wrap items-center justify-center lg:justify-start gap-8 fade-target" data-delay="0.5">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-gradient">+5000</div>
+              <div class="text-sm text-muted-foreground">تاجر نشط</div>
+            </div>
+            <div class="w-px h-12 bg-border"></div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-gradient">+1M</div>
+              <div class="text-sm text-muted-foreground">منتج مستورد</div>
+            </div>
+            <div class="w-px h-12 bg-border"></div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-gradient">99.9%</div>
+              <div class="text-sm text-muted-foreground">وقت التشغيل</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Image -->
+        <div class="order-1 lg:order-2 fade-target" data-delay="0.3">
+          <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 pointer-events-none lg:hidden"></div>
+            <img src="./assets/hero-dashboard.png" alt="لوحة تحكم محلك" class="w-full h-auto rounded-2xl shadow-elevated animate-float">
+            <!-- Glow effect -->
+            <div class="absolute -inset-4 bg-accent/20 rounded-3xl blur-2xl -z-10"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60">
+      <div class="w-6 h-10 rounded-full border-2 border-primary/30 flex items-start justify-center p-2">
+        <div class="w-1.5 h-3 bg-primary rounded-full animate-bounce"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TRUST MARQUEE ==================== -->
+  <section class="py-8 bg-muted/50 border-y border-border overflow-hidden">
+    <div class="flex gap-12 animate-marquee">
+      <div class="flex items-center gap-3 text-muted-foreground whitespace-nowrap"><span class="w-2 h-2 rounded-full bg-accent"></span><span class="text-lg font-medium">استيراد تلقائي للمنتجات</span></div>
+      <div class="flex items-center gap-3 text-muted-foreground whitespace-nowrap"><span class="w-2 h-2 rounded-full bg-accent"></span><span class="text-lg font-medium">مزامنة الأسعار لحظياً</span></div>
+      <div class="flex items-center gap-3 text-muted-foreground whitespace-nowrap"><span class="w-2 h-2 rounded-full bg-accent"></span><span class="text-lg font-medium">تحديث المخزون آلياً</span></div>
+      <div class="flex items-center gap-3 text-muted-foreground whitespace-nowrap"><span class="w-2 h-2 rounded-full bg-accent"></span><span class="text-lg font-medium">إكمال الطلبات بنقرة</span></div>
+      <div class="flex items-center gap-3 text-muted-foreground whitespace-nowrap"><span class="w-2 h-2 rounded-full bg-accent"></span><span class="text-lg font-medium">تتبع الشحنات مباشرة</span></div>
+      <div class="flex items-center gap-3 text-muted-foreground whitespace-nowrap"><span class="w-2 h-2 rounded-full bg-accent"></span><span class="text-lg font-medium">دعم منصات سلة وزد</span></div>
+      <div class="flex items-center gap-3 text-muted-foreground whitespace-nowrap"><span class="w-2 h-2 rounded-full bg-accent"></span><span class="text-lg font-medium">تحويل العملات تلقائياً</span></div>
+      <div class="flex items-center gap-3 text-muted-foreground whitespace-nowrap"><span class="w-2 h-2 rounded-full bg-accent"></span><span class="text-lg font-medium">ذكاء اصطناعي متقدم</span></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="flex items-center gap-3 text-muted-foreground whitespace-nowrap"><span class="w-2 h-2 rounded-full bg-accent"></span><span class="text-lg font-medium">استيراد تلقائي للمنتجات</span></div>
+      <div class="flex items-center gap-3 text-muted-foreground whitespace-nowrap"><span class="w-2 h-2 rounded-full bg-accent"></span><span class="text-lg font-medium">مزامنة الأسعار لحظياً</span></div>
+      <div class="flex items-center gap-3 text-muted-foreground whitespace-nowrap"><span class="w-2 h-2 rounded-full bg-accent"></span><span class="text-lg font-medium">تحديث المخزون آلياً</span></div>
+      <div class="flex items-center gap-3 text-muted-foreground whitespace-nowrap"><span class="w-2 h-2 rounded-full bg-accent"></span><span class="text-lg font-medium">إكمال الطلبات بنقرة</span></div>
+      <div class="flex items-center gap-3 text-muted-foreground whitespace-nowrap"><span class="w-2 h-2 rounded-full bg-accent"></span><span class="text-lg font-medium">تتبع الشحنات مباشرة</span></div>
+      <div class="flex items-center gap-3 text-muted-foreground whitespace-nowrap"><span class="w-2 h-2 rounded-full bg-accent"></span><span class="text-lg font-medium">دعم منصات سلة وزد</span></div>
+      <div class="flex items-center gap-3 text-muted-foreground whitespace-nowrap"><span class="w-2 h-2 rounded-full bg-accent"></span><span class="text-lg font-medium">تحويل العملات تلقائياً</span></div>
+      <div class="flex items-center gap-3 text-muted-foreground whitespace-nowrap"><span class="w-2 h-2 rounded-full bg-accent"></span><span class="text-lg font-medium">ذكاء اصطناعي متقدم</span></div>
+    </div>
+  </section>
+
+  <!-- ==================== STATS SECTION ==================== -->
+  <section class="py-20 bg-gradient-primary text-white">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div class="text-center fade-target" data-delay="0">
+          <div class="mb-2">
+            <div class="text-4xl md:text-5xl lg:text-6xl font-bold" data-counter data-target="10000" data-suffix="+">0</div>
+          </div>
+          <div class="text-white/80 text-lg font-medium">تاجر نشط</div>
+        </div>
+        <div class="text-center fade-target" data-delay="0.1">
+          <div class="mb-2">
+            <div class="text-4xl md:text-5xl lg:text-6xl font-bold" data-counter data-target="500000" data-suffix="+">0</div>
+          </div>
+          <div class="text-white/80 text-lg font-medium">منتج تم استيراده</div>
+        </div>
+        <div class="text-center fade-target" data-delay="0.2">
+          <div class="mb-2">
+            <div class="text-4xl md:text-5xl lg:text-6xl font-bold" data-counter data-target="2000000" data-suffix="+">0</div>
+          </div>
+          <div class="text-white/80 text-lg font-medium">طلب تم إكماله</div>
+        </div>
+        <div class="text-center fade-target" data-delay="0.3">
+          <div class="mb-2">
+            <div class="text-4xl md:text-5xl lg:text-6xl font-bold" data-counter data-target="99.9" data-suffix="%">0</div>
+          </div>
+          <div class="text-white/80 text-lg font-medium">وقت التشغيل</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURES SECTION ==================== -->
+  <section id="features" class="py-24 bg-background">
+    <div class="container mx-auto px-4">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">المميزات</span>
+        <h2 class="section-heading">كل ما تحتاجه لـ<span class="text-gradient">أتمتة متجرك</span></h2>
+        <p class="section-subheading">أدوات قوية تعمل معاً لتوفر لك الوقت وتزيد أرباحك</p>
+      </div>
+
+      <!-- Features Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
+        <div class="feature-card shadow-soft hover:shadow-elevated fade-target" data-delay="0">
+          <div class="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6">
+            <i data-lucide="package" class="w-7 h-7 text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">استيراد المنتجات</h3>
+          <p class="text-muted-foreground">استورد أي منتج من الموردين مباشرة بالألوان والمقاسات والصور.</p>
+        </div>
+        <div class="feature-card shadow-soft hover:shadow-elevated fade-target" data-delay="0.1">
+          <div class="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6">
+            <i data-lucide="refresh-cw" class="w-7 h-7 text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">مزامنة تلقائية</h3>
+          <p class="text-muted-foreground">تحديث الأسعار والمخزون لحظياً دون تدخل منك.</p>
+        </div>
+        <div class="feature-card shadow-soft hover:shadow-elevated fade-target" data-delay="0.2">
+          <div class="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6">
+            <i data-lucide="zap" class="w-7 h-7 text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">إكمال الطلبات</h3>
+          <p class="text-muted-foreground">أتمتة كاملة لعملية الطلب من الاستلام حتى التسليم.</p>
+        </div>
+        <div class="feature-card shadow-soft hover:shadow-elevated fade-target" data-delay="0.3">
+          <div class="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6">
+            <i data-lucide="trending-up" class="w-7 h-7 text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">هامش ربح ذكي</h3>
+          <p class="text-muted-foreground">حدد هامش ربحك ودع النظام يحسب السعر تلقائياً.</p>
+        </div>
+        <div class="feature-card shadow-soft hover:shadow-elevated fade-target" data-delay="0.4">
+          <div class="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6">
+            <i data-lucide="shield-check" class="w-7 h-7 text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">تتبع الشحنات</h3>
+          <p class="text-muted-foreground">تتبع جميع شحناتك وأعلم عملاءك بالتحديثات تلقائياً.</p>
+        </div>
+        <div class="feature-card shadow-soft hover:shadow-elevated fade-target" data-delay="0.5">
+          <div class="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6">
+            <i data-lucide="globe" class="w-7 h-7 text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">تحويل العملات</h3>
+          <p class="text-muted-foreground">تحويل العملات آلياً بأسعار السوق الحية.</p>
+        </div>
+      </div>
+
+      <!-- Products Automation Section -->
+      <div class="grid lg:grid-cols-2 gap-12 items-center mb-24">
+        <div class="order-2 lg:order-1">
+          <span class="inline-block px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">أتمتة المنتجات</span>
+          <h3 class="text-3xl md:text-4xl font-bold mb-6">استورد آلاف المنتجات في دقائق</h3>
+          <ul class="space-y-4">
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0"><span class="w-2 h-2 rounded-full bg-accent"></span></span>
+              <span class="text-lg">استيراد بالرابط مباشرة</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0"><span class="w-2 h-2 rounded-full bg-accent"></span></span>
+              <span class="text-lg">جلب جميع الخيارات والألوان والمقاسات</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0"><span class="w-2 h-2 rounded-full bg-accent"></span></span>
+              <span class="text-lg">تحديث الأسعار تلقائياً بناءً على سعر الصرف</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0"><span class="w-2 h-2 rounded-full bg-accent"></span></span>
+              <span class="text-lg">إضافة هامش الربح الذي تريده</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0"><span class="w-2 h-2 rounded-full bg-accent"></span></span>
+              <span class="text-lg">مزامنة المخزون مع المورد</span>
+            </li>
+          </ul>
+        </div>
+        <div class="order-1 lg:order-2 relative fade-target" data-delay="0.2">
+          <img src="./assets/products-automation.png" alt="أتمتة المنتجات" class="w-full h-auto rounded-2xl shadow-elevated">
+          <div class="absolute -inset-4 bg-accent/10 rounded-3xl blur-2xl -z-10"></div>
+        </div>
+      </div>
+
+      <!-- Orders Automation Section -->
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="relative fade-target" data-delay="0.2">
+          <img src="./assets/orders-automation.png" alt="أتمتة الطلبات" class="w-full h-auto rounded-2xl shadow-elevated">
+          <div class="absolute -inset-4 bg-primary/10 rounded-3xl blur-2xl -z-10"></div>
+        </div>
+        <div>
+          <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">أتمتة الطلبات</span>
+          <h3 class="text-3xl md:text-4xl font-bold mb-6">من الطلب إلى التسليم، تلقائياً</h3>
+          <ul class="space-y-4">
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0"><span class="w-2 h-2 rounded-full bg-primary"></span></span>
+              <span class="text-lg">ربط الطلبات تلقائياً مع المورد</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0"><span class="w-2 h-2 rounded-full bg-primary"></span></span>
+              <span class="text-lg">إكمال الطلبات بنقرة واحدة</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0"><span class="w-2 h-2 rounded-full bg-primary"></span></span>
+              <span class="text-lg">تحديث حالة الطلب تلقائياً</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0"><span class="w-2 h-2 rounded-full bg-primary"></span></span>
+              <span class="text-lg">إرسال رقم التتبع للعميل</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0"><span class="w-2 h-2 rounded-full bg-primary"></span></span>
+              <span class="text-lg">متابعة الشحنة حتى التسليم</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ANALYTICS SECTION ==================== -->
+  <section class="py-24 bg-background overflow-hidden">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Content -->
+        <div class="order-2 lg:order-1">
+          <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">التحليلات</span>
+          <h2 class="section-heading mb-6">قرارات ذكية مبنية على <span class="text-gradient">بيانات حقيقية</span></h2>
+          <p class="text-lg text-muted-foreground mb-8">لوحة تحكم متكاملة تعرض لك كل ما تحتاجه لفهم أداء متجرك واتخاذ قرارات مدروسة</p>
+
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="flex gap-4 fade-target" data-delay="0">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="bar-chart-3" class="w-6 h-6 text-primary"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">تقارير المبيعات</h3>
+                <p class="text-sm text-muted-foreground">تتبع مبيعاتك اليومية والشهرية بتفصيل كامل</p>
+              </div>
+            </div>
+            <div class="flex gap-4 fade-target" data-delay="0.1">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="trending-up" class="w-6 h-6 text-primary"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">تحليل الأداء</h3>
+                <p class="text-sm text-muted-foreground">اعرف أفضل منتجاتك وأوقات الذروة</p>
+              </div>
+            </div>
+            <div class="flex gap-4 fade-target" data-delay="0.2">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="pie-chart" class="w-6 h-6 text-primary"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">توزيع الإيرادات</h3>
+                <p class="text-sm text-muted-foreground">شاهد من أين تأتي أرباحك بالتفصيل</p>
+              </div>
+            </div>
+            <div class="flex gap-4 fade-target" data-delay="0.3">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="activity" class="w-6 h-6 text-primary"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">مراقبة حية</h3>
+                <p class="text-sm text-muted-foreground">تابع نشاط متجرك لحظة بلحظة</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="order-1 lg:order-2 relative fade-target" data-delay="0.2">
+          <div class="absolute inset-0 bg-gradient-primary rounded-2xl blur-3xl opacity-20 transform rotate-3"></div>
+          <img src="./assets/analytics-dashboard.png" alt="لوحة التحليلات" class="relative rounded-2xl shadow-elevated w-full animate-float">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== HOW IT WORKS ==================== -->
+  <section id="how-it-works" class="py-24 bg-gradient-dark-section text-white">
+    <div class="container mx-auto px-4">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <span class="inline-block px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-medium mb-4">كيف يعمل</span>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">ابدأ في <span class="text-accent">5 خطوات بسيطة</span></h2>
+        <p class="text-lg md:text-xl text-white/70 max-w-2xl mx-auto">من الصفر إلى متجر مؤتمت بالكامل في أقل من 10 دقائق</p>
+      </div>
+
+      <!-- Steps -->
+      <div class="relative">
+        <!-- Connection line -->
+        <div class="hidden lg:block absolute top-1/2 right-0 left-0 h-0.5 bg-gradient-to-l from-accent/50 via-accent to-accent/50 -translate-y-1/2"></div>
+
+        <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
+          <div class="relative fade-target" data-delay="0">
+            <div class="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+              <div class="absolute -top-4 right-1/2 translate-x-1/2 w-8 h-8 rounded-full bg-accent flex items-center justify-center text-sm font-bold text-white">01</div>
+              <div class="w-16 h-16 rounded-xl bg-accent/20 flex items-center justify-center mx-auto mb-4 mt-4">
+                <i data-lucide="link" class="w-8 h-8 text-accent"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">ربط متجرك</h3>
+              <p class="text-white/70 text-sm">اربط متجرك على سلة أو زد بنقرة واحدة</p>
+            </div>
+          </div>
+          <div class="relative fade-target" data-delay="0.15">
+            <div class="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+              <div class="absolute -top-4 right-1/2 translate-x-1/2 w-8 h-8 rounded-full bg-accent flex items-center justify-center text-sm font-bold text-white">02</div>
+              <div class="w-16 h-16 rounded-xl bg-accent/20 flex items-center justify-center mx-auto mb-4 mt-4">
+                <i data-lucide="download" class="w-8 h-8 text-accent"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">استورد المنتجات</h3>
+              <p class="text-white/70 text-sm">الصق رابط المنتج واستورده بكل تفاصيله</p>
+            </div>
+          </div>
+          <div class="relative fade-target" data-delay="0.3">
+            <div class="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+              <div class="absolute -top-4 right-1/2 translate-x-1/2 w-8 h-8 rounded-full bg-accent flex items-center justify-center text-sm font-bold text-white">03</div>
+              <div class="w-16 h-16 rounded-xl bg-accent/20 flex items-center justify-center mx-auto mb-4 mt-4">
+                <i data-lucide="shopping-cart" class="w-8 h-8 text-accent"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">استقبل الطلبات</h3>
+              <p class="text-white/70 text-sm">عملاؤك يطلبون من متجرك بشكل طبيعي</p>
+            </div>
+          </div>
+          <div class="relative fade-target" data-delay="0.45">
+            <div class="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+              <div class="absolute -top-4 right-1/2 translate-x-1/2 w-8 h-8 rounded-full bg-accent flex items-center justify-center text-sm font-bold text-white">04</div>
+              <div class="w-16 h-16 rounded-xl bg-accent/20 flex items-center justify-center mx-auto mb-4 mt-4">
+                <i data-lucide="truck" class="w-8 h-8 text-accent"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">نتولى التنفيذ</h3>
+              <p class="text-white/70 text-sm">نرسل الطلب للمورد ونتابع الشحن</p>
+            </div>
+          </div>
+          <div class="relative fade-target" data-delay="0.6">
+            <div class="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+              <div class="absolute -top-4 right-1/2 translate-x-1/2 w-8 h-8 rounded-full bg-accent flex items-center justify-center text-sm font-bold text-white">05</div>
+              <div class="w-16 h-16 rounded-xl bg-accent/20 flex items-center justify-center mx-auto mb-4 mt-4">
+                <i data-lucide="wallet" class="w-8 h-8 text-accent"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">احصل على أرباحك</h3>
+              <p class="text-white/70 text-sm">الفرق بين سعر البيع والشراء ربحك الصافي</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="mt-20 grid md:grid-cols-3 gap-8">
+        <div class="text-center fade-target" data-delay="0.5">
+          <div class="text-5xl md:text-6xl font-bold text-accent mb-2">+500K</div>
+          <div class="text-white/70 text-lg">طلب منفذ</div>
+        </div>
+        <div class="text-center fade-target" data-delay="0.6">
+          <div class="text-5xl md:text-6xl font-bold text-accent mb-2">+25K</div>
+          <div class="text-white/70 text-lg">عميل سعيد</div>
+        </div>
+        <div class="text-center fade-target" data-delay="0.7">
+          <div class="text-5xl md:text-6xl font-bold text-accent mb-2">24/7</div>
+          <div class="text-white/70 text-lg">دعم فني</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== AI FEATURES ==================== -->
+  <section class="py-24 bg-gradient-dark-section text-white overflow-hidden">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Content -->
+        <div>
+          <span class="inline-block px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-medium mb-4">الذكاء الاصطناعي</span>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">قوة <span class="text-accent">الذكاء الاصطناعي</span> في خدمة متجرك</h2>
+          <p class="text-lg text-white/70 mb-8">تقنيات الذكاء الاصطناعي المتقدمة تساعدك على أتمتة العمليات وزيادة المبيعات بشكل ذكي</p>
+
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="p-5 rounded-xl bg-white/5 border border-white/10 fade-target hover:bg-white/10 transition-colors" data-delay="0">
+              <div class="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
+                <i data-lucide="brain" class="w-6 h-6 text-accent"></i>
+              </div>
+              <h3 class="font-semibold mb-2">ذكاء اصطناعي متقدم</h3>
+              <p class="text-sm text-white/60">تحليل ذكي لسلوك العملاء وتوصيات مخصصة</p>
+            </div>
+            <div class="p-5 rounded-xl bg-white/5 border border-white/10 fade-target hover:bg-white/10 transition-colors" data-delay="0.1">
+              <div class="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
+                <i data-lucide="sparkles" class="w-6 h-6 text-accent"></i>
+              </div>
+              <h3 class="font-semibold mb-2">توليد الوصف تلقائياً</h3>
+              <p class="text-sm text-white/60">إنشاء أوصاف جذابة للمنتجات بضغطة زر</p>
+            </div>
+            <div class="p-5 rounded-xl bg-white/5 border border-white/10 fade-target hover:bg-white/10 transition-colors" data-delay="0.2">
+              <div class="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
+                <i data-lucide="target" class="w-6 h-6 text-accent"></i>
+              </div>
+              <h3 class="font-semibold mb-2">استهداف ذكي</h3>
+              <p class="text-sm text-white/60">تحديد الجمهور المثالي لكل منتج</p>
+            </div>
+            <div class="p-5 rounded-xl bg-white/5 border border-white/10 fade-target hover:bg-white/10 transition-colors" data-delay="0.3">
+              <div class="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
+                <i data-lucide="line-chart" class="w-6 h-6 text-accent"></i>
+              </div>
+              <h3 class="font-semibold mb-2">توقع المبيعات</h3>
+              <p class="text-sm text-white/60">تنبؤات دقيقة لمساعدتك في التخطيط</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="relative fade-target" data-delay="0.3">
+          <div class="absolute inset-0 bg-accent rounded-2xl blur-3xl opacity-20"></div>
+          <img src="./assets/ai-automation.png" alt="الذكاء الاصطناعي في محلك" class="relative rounded-2xl shadow-glow w-full animate-float">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GLOBAL REACH ==================== -->
+  <section class="py-24 bg-background overflow-hidden">
+    <div class="container mx-auto px-4">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">الوصول العالمي</span>
+        <h2 class="section-heading">شحن إلى <span class="text-gradient">أي مكان في العالم</span></h2>
+        <p class="section-subheading">شبكة لوجستية عالمية متكاملة توصل منتجاتك لعملائك أينما كانوا</p>
+      </div>
+
+      <!-- Map Image -->
+      <div class="relative mb-16 fade-target">
+        <div class="absolute inset-0 bg-gradient-primary rounded-2xl blur-3xl opacity-10"></div>
+        <img src="./assets/global-shipping.png" alt="شبكة الشحن العالمية" class="relative rounded-2xl shadow-elevated w-full">
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="text-center p-6 bg-card rounded-2xl border border-border fade-target hover:shadow-soft transition-shadow" data-delay="0">
+          <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="globe" class="w-7 h-7 text-primary"></i>
+          </div>
+          <div class="text-3xl font-bold text-gradient mb-1">150+</div>
+          <div class="text-muted-foreground">دولة مدعومة</div>
+        </div>
+        <div class="text-center p-6 bg-card rounded-2xl border border-border fade-target hover:shadow-soft transition-shadow" data-delay="0.1">
+          <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="truck" class="w-7 h-7 text-primary"></i>
+          </div>
+          <div class="text-3xl font-bold text-gradient mb-1">50K+</div>
+          <div class="text-muted-foreground">شحنة شهرياً</div>
+        </div>
+        <div class="text-center p-6 bg-card rounded-2xl border border-border fade-target hover:shadow-soft transition-shadow" data-delay="0.2">
+          <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="clock" class="w-7 h-7 text-primary"></i>
+          </div>
+          <div class="text-3xl font-bold text-gradient mb-1">7-15</div>
+          <div class="text-muted-foreground">يوم للتوصيل</div>
+        </div>
+        <div class="text-center p-6 bg-card rounded-2xl border border-border fade-target hover:shadow-soft transition-shadow" data-delay="0.3">
+          <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="map-pin" class="w-7 h-7 text-primary"></i>
+          </div>
+          <div class="text-3xl font-bold text-gradient mb-1">24/7</div>
+          <div class="text-muted-foreground">تتبع مباشر</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MOBILE APP ==================== -->
+  <section class="py-24 bg-muted/30 overflow-hidden">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Image -->
+        <div class="relative">
+          <div class="relative fade-target max-w-md mx-auto">
+            <div class="absolute inset-0 bg-gradient-primary rounded-[3rem] blur-3xl opacity-20 transform -rotate-6"></div>
+            <img src="./assets/mobile-app.png" alt="تطبيق محلك على الجوال" class="relative rounded-[2rem] shadow-elevated w-full animate-float">
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div>
+          <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">تطبيق الجوال</span>
+          <h2 class="section-heading mb-6">متجرك في <span class="text-gradient">جيبك</span></h2>
+          <p class="text-lg text-muted-foreground mb-8">تطبيق مخصص للهواتف الذكية يتيح لك إدارة متجرك ومتابعة الطلبات من أي مكان وفي أي وقت</p>
+
+          <div class="space-y-6">
+            <div class="flex gap-4 p-4 bg-card rounded-xl border border-border fade-target hover:shadow-soft transition-shadow" data-delay="0">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="smartphone" class="w-6 h-6 text-primary"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">إدارة من أي مكان</h3>
+                <p class="text-sm text-muted-foreground">تابع متجرك من هاتفك أينما كنت</p>
+              </div>
+            </div>
+            <div class="flex gap-4 p-4 bg-card rounded-xl border border-border fade-target hover:shadow-soft transition-shadow" data-delay="0.1">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="bell" class="w-6 h-6 text-primary"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">إشعارات فورية</h3>
+                <p class="text-sm text-muted-foreground">تنبيهات لحظية لكل طلب جديد</p>
+              </div>
+            </div>
+            <div class="flex gap-4 p-4 bg-card rounded-xl border border-border fade-target hover:shadow-soft transition-shadow" data-delay="0.2">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="zap" class="w-6 h-6 text-primary"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">أداء سريع</h3>
+                <p class="text-sm text-muted-foreground">تطبيق خفيف وسريع الاستجابة</p>
+              </div>
+            </div>
+            <div class="flex gap-4 p-4 bg-card rounded-xl border border-border fade-target hover:shadow-soft transition-shadow" data-delay="0.3">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="shield" class="w-6 h-6 text-primary"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">أمان متقدم</h3>
+                <p class="text-sm text-muted-foreground">حماية كاملة لبياناتك ومتجرك</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex gap-4 mt-8">
+            <button class="btn-hero !py-3 !px-6 !text-base">حمّل التطبيق</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PARTNERS MARQUEE ==================== -->
+  <section id="integrations" class="py-16 bg-muted/30 overflow-hidden">
+    <div class="container mx-auto px-4 mb-8">
+      <div class="text-center">
+        <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">شركاؤنا</span>
+        <h2 class="text-2xl md:text-3xl font-bold">متكاملون مع <span class="text-gradient">أكبر المنصات</span></h2>
+      </div>
+    </div>
+
+    <!-- Marquee Container -->
+    <div class="relative">
+      <!-- Gradient Edges -->
+      <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-muted/30 to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-muted/30 to-transparent z-10 pointer-events-none"></div>
+
+      <!-- First Row -->
+      <div class="flex gap-8 animate-marquee mb-6">
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"><span class="text-primary font-bold text-lg">س</span></div>
+            <div><div class="font-semibold text-foreground">سلة</div><div class="text-xs text-muted-foreground">Salla</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"><span class="text-primary font-bold text-lg">ز</span></div>
+            <div><div class="font-semibold text-foreground">زد</div><div class="text-xs text-muted-foreground">Zid</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"><span class="text-primary font-bold text-lg">ش</span></div>
+            <div><div class="font-semibold text-foreground">شوبيفاي</div><div class="text-xs text-muted-foreground">Shopify</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"><span class="text-primary font-bold text-lg">و</span></div>
+            <div><div class="font-semibold text-foreground">ووكومرس</div><div class="text-xs text-muted-foreground">WooCommerce</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"><span class="text-primary font-bold text-lg">ع</span></div>
+            <div><div class="font-semibold text-foreground">علي إكسبريس</div><div class="text-xs text-muted-foreground">AliExpress</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"><span class="text-primary font-bold text-lg">ش</span></div>
+            <div><div class="font-semibold text-foreground">شي إن</div><div class="text-xs text-muted-foreground">SHEIN</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"><span class="text-primary font-bold text-lg">أ</span></div>
+            <div><div class="font-semibold text-foreground">أمازون</div><div class="text-xs text-muted-foreground">Amazon</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"><span class="text-primary font-bold text-lg">ن</span></div>
+            <div><div class="font-semibold text-foreground">نون</div><div class="text-xs text-muted-foreground">Noon</div></div>
+          </div>
+        </div>
+        <!-- Duplicate -->
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"><span class="text-primary font-bold text-lg">س</span></div>
+            <div><div class="font-semibold text-foreground">سلة</div><div class="text-xs text-muted-foreground">Salla</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"><span class="text-primary font-bold text-lg">ز</span></div>
+            <div><div class="font-semibold text-foreground">زد</div><div class="text-xs text-muted-foreground">Zid</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"><span class="text-primary font-bold text-lg">ش</span></div>
+            <div><div class="font-semibold text-foreground">شوبيفاي</div><div class="text-xs text-muted-foreground">Shopify</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"><span class="text-primary font-bold text-lg">و</span></div>
+            <div><div class="font-semibold text-foreground">ووكومرس</div><div class="text-xs text-muted-foreground">WooCommerce</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"><span class="text-primary font-bold text-lg">ع</span></div>
+            <div><div class="font-semibold text-foreground">علي إكسبريس</div><div class="text-xs text-muted-foreground">AliExpress</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"><span class="text-primary font-bold text-lg">ش</span></div>
+            <div><div class="font-semibold text-foreground">شي إن</div><div class="text-xs text-muted-foreground">SHEIN</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"><span class="text-primary font-bold text-lg">أ</span></div>
+            <div><div class="font-semibold text-foreground">أمازون</div><div class="text-xs text-muted-foreground">Amazon</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"><span class="text-primary font-bold text-lg">ن</span></div>
+            <div><div class="font-semibold text-foreground">نون</div><div class="text-xs text-muted-foreground">Noon</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Row - Reverse -->
+      <div class="flex gap-8 animate-marquee-reverse">
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center"><span class="text-accent font-bold text-lg">ن</span></div>
+            <div><div class="font-semibold text-foreground">نون</div><div class="text-xs text-muted-foreground">Noon</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center"><span class="text-accent font-bold text-lg">أ</span></div>
+            <div><div class="font-semibold text-foreground">أمازون</div><div class="text-xs text-muted-foreground">Amazon</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center"><span class="text-accent font-bold text-lg">ش</span></div>
+            <div><div class="font-semibold text-foreground">شي إن</div><div class="text-xs text-muted-foreground">SHEIN</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center"><span class="text-accent font-bold text-lg">ع</span></div>
+            <div><div class="font-semibold text-foreground">علي إكسبريس</div><div class="text-xs text-muted-foreground">AliExpress</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center"><span class="text-accent font-bold text-lg">و</span></div>
+            <div><div class="font-semibold text-foreground">ووكومرس</div><div class="text-xs text-muted-foreground">WooCommerce</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center"><span class="text-accent font-bold text-lg">ش</span></div>
+            <div><div class="font-semibold text-foreground">شوبيفاي</div><div class="text-xs text-muted-foreground">Shopify</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center"><span class="text-accent font-bold text-lg">ز</span></div>
+            <div><div class="font-semibold text-foreground">زد</div><div class="text-xs text-muted-foreground">Zid</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center"><span class="text-accent font-bold text-lg">س</span></div>
+            <div><div class="font-semibold text-foreground">سلة</div><div class="text-xs text-muted-foreground">Salla</div></div>
+          </div>
+        </div>
+        <!-- Duplicate -->
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center"><span class="text-accent font-bold text-lg">ن</span></div>
+            <div><div class="font-semibold text-foreground">نون</div><div class="text-xs text-muted-foreground">Noon</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center"><span class="text-accent font-bold text-lg">أ</span></div>
+            <div><div class="font-semibold text-foreground">أمازون</div><div class="text-xs text-muted-foreground">Amazon</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center"><span class="text-accent font-bold text-lg">ش</span></div>
+            <div><div class="font-semibold text-foreground">شي إن</div><div class="text-xs text-muted-foreground">SHEIN</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center"><span class="text-accent font-bold text-lg">ع</span></div>
+            <div><div class="font-semibold text-foreground">علي إكسبريس</div><div class="text-xs text-muted-foreground">AliExpress</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center"><span class="text-accent font-bold text-lg">و</span></div>
+            <div><div class="font-semibold text-foreground">ووكومرس</div><div class="text-xs text-muted-foreground">WooCommerce</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center"><span class="text-accent font-bold text-lg">ش</span></div>
+            <div><div class="font-semibold text-foreground">شوبيفاي</div><div class="text-xs text-muted-foreground">Shopify</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center"><span class="text-accent font-bold text-lg">ز</span></div>
+            <div><div class="font-semibold text-foreground">زد</div><div class="text-xs text-muted-foreground">Zid</div></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 px-8 py-4 bg-card border border-border rounded-xl shadow-soft hover:shadow-elevated transition-shadow duration-300">
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center"><span class="text-accent font-bold text-lg">س</span></div>
+            <div><div class="font-semibold text-foreground">سلة</div><div class="text-xs text-muted-foreground">Salla</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRICING ==================== -->
+  <section id="pricing" class="py-24 bg-background">
+    <div class="container mx-auto px-4">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">الأسعار</span>
+        <h2 class="section-heading">خطط <span class="text-gradient">تناسب الجميع</span></h2>
+        <p class="section-subheading">اختر الخطة المناسبة لحجم عملك وابدأ الآن</p>
+      </div>
+
+      <!-- Pricing Cards -->
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Free Plan -->
+        <div class="relative rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 bg-card border border-border shadow-soft fade-target" data-delay="0">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold mb-2">المجاني</h3>
+            <p class="text-sm mb-4 text-muted-foreground">مثالي للمبتدئين</p>
+            <div class="flex items-baseline justify-center gap-1">
+              <span class="text-5xl font-bold"><span class="text-2xl">ر.س</span>0</span>
+              <span class="text-muted-foreground">/شهرياً</span>
+            </div>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-primary"></i></div>
+              <span>حتى 50 منتج</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-primary"></i></div>
+              <span>تحديث يومي للأسعار</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-primary"></i></div>
+              <span>دعم البريد الإلكتروني</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-primary"></i></div>
+              <span>تكامل منصة واحدة</span>
+            </li>
+          </ul>
+          <button class="w-full py-4 rounded-xl font-semibold transition-all duration-300 btn-hero-outline">ابدأ مجاناً</button>
+        </div>
+
+        <!-- Pro Plan -->
+        <div class="relative rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 bg-gradient-primary text-white shadow-elevated pricing-card popular fade-target" data-delay="0.1">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent text-white text-sm font-medium rounded-full flex items-center gap-1">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            الأكثر شعبية
+          </div>
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold mb-2">الاحترافي</h3>
+            <p class="text-sm mb-4 text-white/80">للتجار المحترفين</p>
+            <div class="flex items-baseline justify-center gap-1">
+              <span class="text-5xl font-bold"><span class="text-2xl">ر.س</span>99</span>
+              <span class="text-white/80">/شهرياً</span>
+            </div>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+              <span>منتجات غير محدودة</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+              <span>تحديث لحظي للأسعار</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+              <span>دعم أولوية 24/7</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+              <span>تكامل جميع المنصات</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+              <span>تقارير متقدمة</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+              <span>API كامل</span>
+            </li>
+          </ul>
+          <button class="w-full py-4 rounded-xl font-semibold transition-all duration-300 bg-white text-primary hover:bg-white/90">ابدأ تجربة مجانية</button>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="relative rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 bg-card border border-border shadow-soft fade-target" data-delay="0.2">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold mb-2">المؤسسات</h3>
+            <p class="text-sm mb-4 text-muted-foreground">للشركات الكبيرة</p>
+            <div class="flex items-baseline justify-center gap-1">
+              <span class="text-5xl font-bold">مخصص</span>
+            </div>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-primary"></i></div>
+              <span>كل مميزات الاحترافي</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-primary"></i></div>
+              <span>مدير حساب مخصص</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-primary"></i></div>
+              <span>SLA مضمون</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-primary"></i></div>
+              <span>تخصيص كامل</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-primary"></i></div>
+              <span>تدريب الفريق</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-primary"></i></div>
+              <span>تكامل مخصص</span>
+            </li>
+          </ul>
+          <button class="w-full py-4 rounded-xl font-semibold transition-all duration-300 btn-hero-outline">تواصل معنا</button>
+        </div>
+      </div>
+
+      <!-- Money back guarantee -->
+      <div class="text-center mt-12">
+        <p class="text-muted-foreground">ضمان استرداد المال خلال 30 يوم • بدون التزام طويل المدى</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIALS ==================== -->
+  <section id="testimonials" class="py-24 bg-muted/30">
+    <div class="container mx-auto px-4">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">آراء العملاء</span>
+        <h2 class="section-heading">ماذا يقول <span class="text-gradient">عملاؤنا</span></h2>
+        <p class="section-subheading">آلاف التجار يثقون بمحلك لإدارة متاجرهم</p>
+      </div>
+
+      <!-- Testimonials Slider -->
+      <div class="relative max-w-4xl mx-auto">
+        <div class="overflow-hidden">
+          <div id="testimonials-slider" class="testimonials-slider">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-slide">
+              <div class="bg-card border border-border rounded-2xl p-8 md:p-12 text-center shadow-soft">
+                <div class="flex justify-center gap-1 mb-6">
+                  <i data-lucide="star" class="w-6 h-6 fill-accent text-accent"></i>
+                  <i data-lucide="star" class="w-6 h-6 fill-accent text-accent"></i>
+                  <i data-lucide="star" class="w-6 h-6 fill-accent text-accent"></i>
+                  <i data-lucide="star" class="w-6 h-6 fill-accent text-accent"></i>
+                  <i data-lucide="star" class="w-6 h-6 fill-accent text-accent"></i>
+                </div>
+                <blockquote class="text-xl md:text-2xl font-medium mb-8 leading-relaxed">"محلك غيّر طريقة إدارتي للمتجر بالكامل. الأتمتة وفرت لي ساعات يومياً وزادت أرباحي 40%."</blockquote>
+                <div>
+                  <div class="w-16 h-16 rounded-full bg-gradient-primary mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-white">م</div>
+                  <div class="font-bold text-lg">محمد الأحمد</div>
+                  <div class="text-muted-foreground">صاحب متجر إلكتروني</div>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="testimonial-slide">
+              <div class="bg-card border border-border rounded-2xl p-8 md:p-12 text-center shadow-soft">
+                <div class="flex justify-center gap-1 mb-6">
+                  <i data-lucide="star" class="w-6 h-6 fill-accent text-accent"></i>
+                  <i data-lucide="star" class="w-6 h-6 fill-accent text-accent"></i>
+                  <i data-lucide="star" class="w-6 h-6 fill-accent text-accent"></i>
+                  <i data-lucide="star" class="w-6 h-6 fill-accent text-accent"></i>
+                  <i data-lucide="star" class="w-6 h-6 fill-accent text-accent"></i>
+                </div>
+                <blockquote class="text-xl md:text-2xl font-medium mb-8 leading-relaxed">"أفضل منصة استخدمتها على الإطلاق. الدعم الفني ممتاز والمزامنة التلقائية لا تقدر بثمن."</blockquote>
+                <div>
+                  <div class="w-16 h-16 rounded-full bg-gradient-primary mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-white">س</div>
+                  <div class="font-bold text-lg">سارة العتيبي</div>
+                  <div class="text-muted-foreground">تاجرة دروبشيبينغ</div>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="testimonial-slide">
+              <div class="bg-card border border-border rounded-2xl p-8 md:p-12 text-center shadow-soft">
+                <div class="flex justify-center gap-1 mb-6">
+                  <i data-lucide="star" class="w-6 h-6 fill-accent text-accent"></i>
+                  <i data-lucide="star" class="w-6 h-6 fill-accent text-accent"></i>
+                  <i data-lucide="star" class="w-6 h-6 fill-accent text-accent"></i>
+                  <i data-lucide="star" class="w-6 h-6 fill-accent text-accent"></i>
+                  <i data-lucide="star" class="w-6 h-6 fill-accent text-accent"></i>
+                </div>
+                <blockquote class="text-xl md:text-2xl font-medium mb-8 leading-relaxed">"بدأت مع محلك من الصفر وخلال 3 أشهر أصبح لدي متجر يحقق مبيعات يومية. منصة سهلة وفعالة."</blockquote>
+                <div>
+                  <div class="w-16 h-16 rounded-full bg-gradient-primary mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-white">خ</div>
+                  <div class="font-bold text-lg">خالد الشمري</div>
+                  <div class="text-muted-foreground">رائد أعمال</div>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial 4 -->
+            <div class="testimonial-slide">
+              <div class="bg-card border border-border rounded-2xl p-8 md:p-12 text-center shadow-soft">
+                <div class="flex justify-center gap-1 mb-6">
+                  <i data-lucide="star" class="w-6 h-6 fill-accent text-accent"></i>
+                  <i data-lucide="star" class="w-6 h-6 fill-accent text-accent"></i>
+                  <i data-lucide="star" class="w-6 h-6 fill-accent text-accent"></i>
+                  <i data-lucide="star" class="w-6 h-6 fill-accent text-accent"></i>
+                  <i data-lucide="star" class="w-6 h-6 fill-accent text-accent"></i>
+                </div>
+                <blockquote class="text-xl md:text-2xl font-medium mb-8 leading-relaxed">"استيراد المنتجات أصبح سهلاً جداً. أضيف عشرات المنتجات يومياً بدون أي جهد."</blockquote>
+                <div>
+                  <div class="w-16 h-16 rounded-full bg-gradient-primary mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-white">ن</div>
+                  <div class="font-bold text-lg">نورة القحطاني</div>
+                  <div class="text-muted-foreground">صاحبة متجر أزياء</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex items-center justify-center gap-4 mt-8">
+          <button id="testimonial-prev" class="w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center hover:bg-muted transition-colors" aria-label="Previous">
+            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+          </button>
+          <div class="flex gap-2">
+            <button data-testimonial-dot class="w-3 h-3 rounded-full transition-colors" style="background-color: hsl(var(--primary));" aria-label="Go to slide 1"></button>
+            <button data-testimonial-dot class="w-3 h-3 rounded-full transition-colors" style="background-color: hsl(var(--border));" aria-label="Go to slide 2"></button>
+            <button data-testimonial-dot class="w-3 h-3 rounded-full transition-colors" style="background-color: hsl(var(--border));" aria-label="Go to slide 3"></button>
+            <button data-testimonial-dot class="w-3 h-3 rounded-full transition-colors" style="background-color: hsl(var(--border));" aria-label="Go to slide 4"></button>
+          </div>
+          <button id="testimonial-next" class="w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center hover:bg-muted transition-colors" aria-label="Next">
+            <i data-lucide="chevron-left" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SUPPORT ==================== -->
+  <section class="py-24 bg-muted/30 overflow-hidden">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Image -->
+        <div class="relative order-2 lg:order-1">
+          <div class="relative fade-target">
+            <div class="absolute inset-0 bg-gradient-primary rounded-2xl blur-3xl opacity-20 transform rotate-3"></div>
+            <img src="./assets/support-team.png" alt="فريق الدعم الفني" class="relative rounded-2xl shadow-elevated w-full">
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="order-1 lg:order-2">
+          <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">الدعم الفني</span>
+          <h2 class="section-heading mb-6">نحن معك في <span class="text-gradient">كل خطوة</span></h2>
+          <p class="text-lg text-muted-foreground mb-8">فريق دعم فني محترف ومتخصص يساعدك على تحقيق أقصى استفادة من المنصة</p>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="p-5 bg-card rounded-xl border border-border fade-target hover:shadow-soft transition-shadow" data-delay="0">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                <i data-lucide="headphones" class="w-6 h-6 text-primary"></i>
+              </div>
+              <h3 class="font-semibold mb-1">دعم فني 24/7</h3>
+              <p class="text-sm text-muted-foreground">فريق متخصص متاح على مدار الساعة</p>
+            </div>
+            <div class="p-5 bg-card rounded-xl border border-border fade-target hover:shadow-soft transition-shadow" data-delay="0.1">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                <i data-lucide="message-circle" class="w-6 h-6 text-primary"></i>
+              </div>
+              <h3 class="font-semibold mb-1">دردشة مباشرة</h3>
+              <p class="text-sm text-muted-foreground">تواصل فوري مع فريق الدعم</p>
+            </div>
+            <div class="p-5 bg-card rounded-xl border border-border fade-target hover:shadow-soft transition-shadow" data-delay="0.2">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                <i data-lucide="book-open" class="w-6 h-6 text-primary"></i>
+              </div>
+              <h3 class="font-semibold mb-1">قاعدة معرفية</h3>
+              <p class="text-sm text-muted-foreground">مقالات ودروس تعليمية شاملة</p>
+            </div>
+            <div class="p-5 bg-card rounded-xl border border-border fade-target hover:shadow-soft transition-shadow" data-delay="0.3">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                <i data-lucide="users" class="w-6 h-6 text-primary"></i>
+              </div>
+              <h3 class="font-semibold mb-1">مجتمع التجار</h3>
+              <p class="text-sm text-muted-foreground">تواصل مع آلاف التجار وتبادل الخبرات</p>
+            </div>
+          </div>
+
+          <button class="btn-hero mt-8">تواصل مع الدعم</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FINAL CTA ==================== -->
+  <section id="cta" class="py-24 relative overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0 bg-gradient-primary"></div>
+    <div class="absolute inset-0 opacity-30">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-accent/30 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center text-white">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 mb-6">
+          <i data-lucide="sparkles" class="w-5 h-5 text-accent"></i>
+          <span class="text-sm font-medium">ابدأ مجاناً اليوم</span>
+        </div>
+
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">جاهز لأتمتة متجرك؟</h2>
+
+        <p class="text-xl md:text-2xl text-white/80 mb-10 max-w-xl mx-auto">انضم لآلاف التجار الذين يوفرون الوقت ويزيدون أرباحهم مع محلك</p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#" class="inline-flex items-center justify-center gap-2 px-10 py-5 text-xl font-bold rounded-xl bg-white text-primary hover:scale-105 transition-transform shadow-lg">
+            ابدأ تجربتك المجانية
+            <i data-lucide="arrow-left" class="w-6 h-6"></i>
+          </a>
+        </div>
+
+        <p class="mt-6 text-white/60 text-sm">لا حاجة لبطاقة ائتمان • إلغاء في أي وقت</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-card border-t border-border">
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <!-- Brand -->
+        <div class="lg:col-span-2">
+          <img src="./assets/logo.png" alt="محلك - شي إن" class="h-12 w-auto mb-6">
+          <p class="text-muted-foreground mb-6 max-w-sm">منصة أتمتة التجارة الإلكترونية الأولى في السعودية. نساعدك على إدارة متجرك بذكاء وكفاءة.</p>
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-colors" aria-label="Twitter">
+              <i data-lucide="twitter" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-colors" aria-label="Instagram">
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-colors" aria-label="YouTube">
+              <i data-lucide="youtube" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div>
+          <h4 class="font-bold mb-4">المنتج</h4>
+          <ul class="space-y-3">
+            <li><a href="#features" class="text-muted-foreground hover:text-primary transition-colors">المميزات</a></li>
+            <li><a href="#pricing" class="text-muted-foreground hover:text-primary transition-colors">التسعير</a></li>
+            <li><a href="#integrations" class="text-muted-foreground hover:text-primary transition-colors">التكاملات</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-4">الدعم</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">مركز المساعدة</a></li>
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">تواصل معنا</a></li>
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">الأسئلة الشائعة</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-4">قانوني</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">سياسة الخصوصية</a></li>
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">الشروط والأحكام</a></li>
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">سياسة الاسترجاع</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom -->
+      <div class="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-muted-foreground text-sm">© 2026 محلك - شي إن. جميع الحقوق محفوظة.</p>
+        <div class="flex items-center gap-2 text-sm text-muted-foreground">
+          <span>صنع بـ</span>
+          <span class="text-destructive">❤</span>
+          <span>في السعودية</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./main.js"></script>
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
