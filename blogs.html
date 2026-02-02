@@ -67,9 +67,9 @@
         <a href="./index.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">الرئيسية</a>
         <a href="./about.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">من نحن</a>
         <a href="./pricing.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">الأسعار</a>
-        <a href="./blogs.html" class="text-primary font-medium">المدونة</a>
+        <a href="./blogs.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">المدونة</a>
         <a href="./faqs.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">الأسئلة الشائعة</a>
-        <a href="./contact.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">تواصل معنا</a>
+        <a href="./contact.html" class="text-primary font-medium">تواصل معنا</a>
       </div>
 
       <div class="flex items-center gap-4">
@@ -77,6 +77,19 @@
           <i id="sun-icon" data-lucide="sun" class="w-5 h-5" style="display: none;"></i>
           <i id="moon-icon" data-lucide="moon" class="w-5 h-5"></i>
         </button>
+
+        <!-- Language Switcher -->
+         <!-- switch these classes in laravel  bg-primary text-white-->
+        <div class="flex items-center gap-1 p-1 rounded-lg bg-muted/50 border border-border">
+          <button class="px-3 py-1.5 rounded-md bg-primary text-white text-sm font-medium transition-all duration-300 shadow-sm">
+            <span class="hidden md:inline">العربية</span>
+            <span class="md:hidden">ع</span>
+          </button>
+          <button class="px-3 py-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/50 text-sm font-medium transition-all duration-300">
+            <span class="hidden md:inline">EN</span>
+            <span class="md:hidden">EN</span>
+          </button>
+        </div>
 
         <a href="./login.html" class="hidden md:inline-flex btn-hero !py-2.5 !px-6 !text-base">
           تسجيل الدخول
@@ -94,9 +107,20 @@
         <a href="./index.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">الرئيسية</a>
         <a href="./about.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">من نحن</a>
         <a href="./pricing.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">الأسعار</a>
-        <a href="./blogs.html" class="text-primary font-medium py-2">المدونة</a>
+        <a href="./blogs.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">المدونة</a>
         <a href="./faqs.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">الأسئلة الشائعة</a>
-        <a href="./contact.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">تواصل معنا</a>
+        <a href="./contact.html" class="text-primary font-medium py-2">تواصل معنا</a>
+        
+        <!-- Language Switcher Mobile -->
+        <div class="flex items-center gap-2 p-1.5 rounded-lg bg-muted/50 border border-border">
+          <button class="flex-1 px-4 py-2.5 rounded-md bg-primary text-white text-sm font-medium transition-all duration-300 shadow-sm">
+            العربية
+          </button>
+          <button class="flex-1 px-4 py-2.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/50 text-sm font-medium transition-all duration-300">
+            English
+          </button>
+        </div>
+        
         <a href="./login.html" class="btn-hero text-center mt-2">تسجيل الدخول</a>
       </div>
     </div>
