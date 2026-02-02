@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دليلك الشامل للبدء في الدروبشيبينغ | محلك - شي إن</title>
+  <meta name="description" content="تعرف على أساسيات الدروبشيبينغ وكيفية بناء متجر ناجح من الصفر. نقدم لك خطوات عملية ونصائح من خبراء المجال.">
+  
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./styles.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            border: 'hsl(var(--border))',
+            background: 'hsl(var(--background))',
+            foreground: 'hsl(var(--foreground))',
+            primary: {
+              DEFAULT: 'hsl(var(--primary))',
+              foreground: 'hsl(var(--primary-foreground))',
+            },
+            secondary: {
+              DEFAULT: 'hsl(var(--secondary))',
+              foreground: 'hsl(var(--secondary-foreground))',
+            },
+            muted: {
+              DEFAULT: 'hsl(var(--muted))',
+              foreground: 'hsl(var(--muted-foreground))',
+            },
+            accent: {
+              DEFAULT: 'hsl(var(--accent))',
+              foreground: 'hsl(var(--accent-foreground))',
+            },
+            card: {
+              DEFAULT: 'hsl(var(--card))',
+              foreground: 'hsl(var(--card-foreground))',
+            },
+            destructive: {
+              DEFAULT: 'hsl(var(--destructive))',
+              foreground: 'hsl(var(--destructive-foreground))',
+            },
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="min-h-screen">
+  
+  <!-- ==================== NAVBAR ==================== -->
+  <nav id="navbar" class="fixed top-0 right-0 left-0 z-50 transition-all duration-300 glass shadow-soft py-3">
+    <div class="container mx-auto px-4 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center gap-3">
+        <img src="./assets/logo.png" alt="محلك - شي إن" class="h-10 w-auto">
+      </a>
+
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="./index.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">الرئيسية</a>
+        <a href="./about.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">من نحن</a>
+        <a href="./pricing.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">الأسعار</a>
+        <a href="./blogs.html" class="text-primary font-medium">المدونة</a>
+        <a href="./faqs.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">الأسئلة الشائعة</a>
+        <a href="./contact.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">تواصل معنا</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <button id="dark-mode-toggle" class="p-2 rounded-lg hover:bg-muted transition-colors" aria-label="Toggle dark mode">
+          <i id="sun-icon" data-lucide="sun" class="w-5 h-5" style="display: none;"></i>
+          <i id="moon-icon" data-lucide="moon" class="w-5 h-5"></i>
+        </button>
+
+        <a href="./login.html" class="hidden md:inline-flex btn-hero !py-2.5 !px-6 !text-base">
+          تسجيل الدخول
+        </a>
+
+        <button id="mobile-menu-button" class="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors" aria-label="Toggle menu">
+          <i id="menu-icon" data-lucide="menu" class="w-6 h-6"></i>
+          <i id="close-icon" data-lucide="x" class="w-6 h-6" style="display: none;"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu glass">
+      <div class="container mx-auto px-4 py-6 flex flex-col gap-4">
+        <a href="./index.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">الرئيسية</a>
+        <a href="./about.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">من نحن</a>
+        <a href="./pricing.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">الأسعار</a>
+        <a href="./blogs.html" class="text-primary font-medium py-2">المدونة</a>
+        <a href="./faqs.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">الأسئلة الشائعة</a>
+        <a href="./contact.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">تواصل معنا</a>
+        <a href="./login.html" class="btn-hero text-center mt-2">تسجيل الدخول</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== BREADCRUMB ==================== -->
+  <section class="pt-28 pb-4 bg-muted/30">
+    <div class="container mx-auto px-4">
+      <nav class="flex items-center gap-2 text-sm text-muted-foreground">
+        <a href="./index.html" class="hover:text-primary transition-colors">الرئيسية</a>
+        <i data-lucide="chevron-left" class="w-4 h-4"></i>
+        <a href="./blogs.html" class="hover:text-primary transition-colors">المدونة</a>
+        <i data-lucide="chevron-left" class="w-4 h-4"></i>
+        <span class="text-foreground">دليل الدروبشيبينغ</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ==================== ARTICLE ==================== -->
+  <article class="py-12 bg-background">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        
+        <!-- Article Header -->
+        <header class="mb-12">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="px-4 py-2 rounded-full bg-accent text-accent-foreground text-sm font-medium">الدروبشيبينغ</span>
+            <span class="text-muted-foreground text-sm flex items-center gap-1">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              15 يناير 2026
+            </span>
+            <span class="text-muted-foreground text-sm flex items-center gap-1">
+              <i data-lucide="clock" class="w-4 h-4"></i>
+              8 دقائق قراءة
+            </span>
+          </div>
+          
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+            دليلك الشامل للبدء في الدروبشيبينغ عام 2026
+          </h1>
+          
+          <p class="text-xl text-muted-foreground mb-8">
+            تعرف على أساسيات الدروبشيبينغ وكيفية بناء متجر ناجح من الصفر. نقدم لك خطوات عملية ونصائح من خبراء المجال لتحقيق النجاح في عالم التجارة الإلكترونية.
+          </p>
+          
+          <!-- Author Info -->
+          <div class="flex items-center gap-4 p-4 bg-card rounded-xl border border-border">
+            <div class="w-14 h-14 rounded-full bg-gradient-primary flex items-center justify-center text-xl font-bold text-white">م</div>
+            <div>
+              <div class="font-bold">محمد العبدالله</div>
+              <div class="text-sm text-muted-foreground">خبير التجارة الإلكترونية</div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="mb-12">
+          <img src="./assets/blog-1.png" alt="دليل الدروبشيبينغ الشامل" class="w-full h-auto rounded-2xl shadow-elevated">
+        </div>
+
+        <!-- Article Content -->
+        <div class="prose prose-lg max-w-none">
+          
+          <h2 class="text-2xl font-bold mb-4 text-foreground">ما هو الدروبشيبينغ؟</h2>
+          <p class="text-muted-foreground mb-6 leading-relaxed">
+            الدروبشيبينغ هو نموذج تجاري في التجارة الإلكترونية يتيح لك بيع المنتجات دون الحاجة إلى امتلاك مخزون فعلي. عندما يشتري العميل منتجًا من متجرك، تقوم أنت بطلب المنتج من المورد الذي يشحنه مباشرة إلى العميل. هذا يعني أنك لا تحتاج إلى استثمار كبير في المخزون أو مستودعات التخزين.
+          </p>
+
+          <h2 class="text-2xl font-bold mb-4 text-foreground">لماذا تختار الدروبشيبينغ؟</h2>
+          <p class="text-muted-foreground mb-4 leading-relaxed">
+            هناك العديد من الأسباب التي تجعل الدروبشيبينغ خيارًا جذابًا للمبتدئين:
+          </p>
+          <ul class="list-disc pr-6 text-muted-foreground mb-6 space-y-2">
+            <li>رأس مال منخفض للبدء - لا تحتاج لشراء مخزون مسبقاً</li>
+            <li>مخاطر أقل - لا تدفع إلا عند البيع الفعلي</li>
+            <li>مرونة في العمل - يمكنك العمل من أي مكان</li>
+            <li>تنوع المنتجات - يمكنك تقديم آلاف المنتجات دون قيود المخزون</li>
+            <li>سهولة التوسع - توسيع نطاق عملك أسهل بكثير</li>
+          </ul>
+
+          <h2 class="text-2xl font-bold mb-4 text-foreground">خطوات البدء في الدروبشيبينغ</h2>
+          
+          <h3 class="text-xl font-bold mb-3 text-foreground">1. اختيار النيش المناسب</h3>
+          <p class="text-muted-foreground mb-6 leading-relaxed">
+            الخطوة الأولى هي اختيار مجال أو نيش محدد للتركيز عليه. ابحث عن منتجات ذات طلب مستمر ومنافسة معقولة. استخدم أدوات مثل Google Trends لفهم اتجاهات السوق.
+          </p>
+
+          <h3 class="text-xl font-bold mb-3 text-foreground">2. البحث عن الموردين الموثوقين</h3>
+          <p class="text-muted-foreground mb-6 leading-relaxed">
+            جودة المورد تحدد نجاح عملك. ابحث عن موردين يقدمون منتجات عالية الجودة، أوقات شحن معقولة، وخدمة عملاء ممتازة. منصة محلك توفر لك الوصول إلى شبكة واسعة من الموردين الموثوقين.
+          </p>
+
+          <h3 class="text-xl font-bold mb-3 text-foreground">3. إنشاء متجرك الإلكتروني</h3>
+          <p class="text-muted-foreground mb-6 leading-relaxed">
+            يمكنك استخدام منصات مثل سلة أو زد لإنشاء متجرك. تأكد من أن التصميم احترافي وسهل الاستخدام. محلك يتكامل مع هذه المنصات لتسهيل إدارة متجرك.
+          </p>
+
+          <h3 class="text-xl font-bold mb-3 text-foreground">4. أتمتة العمليات</h3>
+          <p class="text-muted-foreground mb-6 leading-relaxed">
+            استخدم أدوات الأتمتة لتوفير وقتك. محلك يقدم ميزات أتمتة متقدمة تشمل استيراد المنتجات تلقائياً، مزامنة المخزون، وإكمال الطلبات بنقرة واحدة.
+          </p>
+
+          <!-- Quote Box -->
+          <div class="my-8 p-6 bg-primary/5 border-r-4 border-primary rounded-lg">
+            <blockquote class="text-lg font-medium text-foreground mb-2">
+              "النجاح في الدروبشيبينغ يتطلب الصبر والاستمرارية. ركز على بناء علامة تجارية قوية وتقديم قيمة حقيقية لعملائك."
+            </blockquote>
+            <cite class="text-muted-foreground text-sm">- فريق محلك</cite>
+          </div>
+
+          <h2 class="text-2xl font-bold mb-4 text-foreground">نصائح للنجاح</h2>
+          <ul class="list-disc pr-6 text-muted-foreground mb-6 space-y-2">
+            <li>اختبر المنتجات قبل إضافتها لمتجرك</li>
+            <li>قدم خدمة عملاء استثنائية</li>
+            <li>استثمر في التسويق الرقمي</li>
+            <li>تابع منافسيك وتعلم منهم</li>
+            <li>حلل البيانات واتخذ قرارات مبنية على الأرقام</li>
+          </ul>
+
+          <h2 class="text-2xl font-bold mb-4 text-foreground">الخلاصة</h2>
+          <p class="text-muted-foreground mb-6 leading-relaxed">
+            الدروبشيبينغ فرصة ممتازة لبدء عملك الخاص في التجارة الإلكترونية برأس مال محدود. مع الأدوات الصحيحة والاستراتيجية المناسبة، يمكنك بناء عمل ناجح ومستدام. منصة محلك موجودة لمساعدتك في كل خطوة من هذه الرحلة.
+          </p>
+
+        </div>
+
+        <!-- Share & Tags -->
+        <div class="mt-12 pt-8 border-t border-border">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div class="flex items-center gap-2">
+              <span class="text-muted-foreground">الوسوم:</span>
+              <a href="#" class="px-3 py-1 rounded-full bg-muted text-muted-foreground text-sm hover:bg-primary hover:text-primary-foreground transition-colors">دروبشيبينغ</a>
+              <a href="#" class="px-3 py-1 rounded-full bg-muted text-muted-foreground text-sm hover:bg-primary hover:text-primary-foreground transition-colors">تجارة إلكترونية</a>
+              <a href="#" class="px-3 py-1 rounded-full bg-muted text-muted-foreground text-sm hover:bg-primary hover:text-primary-foreground transition-colors">أتمتة</a>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-muted-foreground">شارك:</span>
+              <a href="#" class="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                <i data-lucide="twitter" class="w-5 h-5"></i>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                <i data-lucide="facebook" class="w-5 h-5"></i>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- ==================== RELATED POSTS ==================== -->
+  <section class="py-24 bg-muted/30">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold mb-12 text-center">مقالات ذات صلة</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <article class="bg-card border border-border rounded-2xl overflow-hidden shadow-soft hover:shadow-elevated transition-all duration-300 group">
+          <a href="./blog-details.html" class="block">
+            <div class="relative overflow-hidden">
+              <img src="./assets/blog-2.png" alt="إدارة المخزون" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-5">
+              <div class="text-sm text-muted-foreground mb-2">12 يناير 2026</div>
+              <h3 class="font-bold group-hover:text-primary transition-colors">كيف توفر الوقت مع إدارة المخزون الآلية</h3>
+            </div>
+          </a>
+        </article>
+
+        <article class="bg-card border border-border rounded-2xl overflow-hidden shadow-soft hover:shadow-elevated transition-all duration-300 group">
+          <a href="./blog-details.html" class="block">
+            <div class="relative overflow-hidden">
+              <img src="./assets/blog-3.png" alt="الذكاء الاصطناعي" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-5">
+              <div class="text-sm text-muted-foreground mb-2">10 يناير 2026</div>
+              <h3 class="font-bold group-hover:text-primary transition-colors">الذكاء الاصطناعي يغير قواعد التجارة</h3>
+            </div>
+          </a>
+        </article>
+
+        <article class="bg-card border border-border rounded-2xl overflow-hidden shadow-soft hover:shadow-elevated transition-all duration-300 group">
+          <a href="./blog-details.html" class="block">
+            <div class="relative overflow-hidden">
+              <img src="./assets/blog-5.png" alt="قصة نجاح" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-5">
+              <div class="text-sm text-muted-foreground mb-2">5 يناير 2026</div>
+              <h3 class="font-bold group-hover:text-primary transition-colors">قصة نجاح: من الصفر إلى 100 ألف ريال</h3>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-card border-t border-border">
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div class="lg:col-span-2">
+          <img src="./assets/logo.png" alt="محلك - شي إن" class="h-12 w-auto mb-6">
+          <p class="text-muted-foreground mb-6 max-w-sm">منصة أتمتة التجارة الإلكترونية الأولى في السعودية. نساعدك على إدارة متجرك بذكاء وكفاءة.</p>
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-colors" aria-label="Twitter">
+              <i data-lucide="twitter" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-colors" aria-label="Instagram">
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-colors" aria-label="YouTube">
+              <i data-lucide="youtube" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-4">الصفحات</h4>
+          <ul class="space-y-3">
+            <li><a href="./index.html" class="text-muted-foreground hover:text-primary transition-colors">الرئيسية</a></li>
+            <li><a href="./about.html" class="text-muted-foreground hover:text-primary transition-colors">من نحن</a></li>
+            <li><a href="./pricing.html" class="text-muted-foreground hover:text-primary transition-colors">الأسعار</a></li>
+            <li><a href="./blogs.html" class="text-muted-foreground hover:text-primary transition-colors">المدونة</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-4">الدعم</h4>
+          <ul class="space-y-3">
+            <li><a href="./faqs.html" class="text-muted-foreground hover:text-primary transition-colors">الأسئلة الشائعة</a></li>
+            <li><a href="./contact.html" class="text-muted-foreground hover:text-primary transition-colors">تواصل معنا</a></li>
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">مركز المساعدة</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-4">قانوني</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">سياسة الخصوصية</a></li>
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">الشروط والأحكام</a></li>
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">سياسة الاسترجاع</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-muted-foreground text-sm">© 2026 محلك - شي إن. جميع الحقوق محفوظة.</p>
+        <div class="flex items-center gap-2 text-sm text-muted-foreground">
+          <span>صنع بـ</span>
+          <span class="text-destructive">❤</span>
+          <span>في السعودية</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./main.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

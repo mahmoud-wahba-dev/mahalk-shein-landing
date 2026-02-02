@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الأسئلة الشائعة | محلك - شي إن</title>
+  <meta name="description" content="إجابات على الأسئلة الأكثر شيوعاً حول منصة محلك وخدماتها في أتمتة التجارة الإلكترونية.">
+  
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./styles.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            border: 'hsl(var(--border))',
+            background: 'hsl(var(--background))',
+            foreground: 'hsl(var(--foreground))',
+            primary: {
+              DEFAULT: 'hsl(var(--primary))',
+              foreground: 'hsl(var(--primary-foreground))',
+            },
+            secondary: {
+              DEFAULT: 'hsl(var(--secondary))',
+              foreground: 'hsl(var(--secondary-foreground))',
+            },
+            muted: {
+              DEFAULT: 'hsl(var(--muted))',
+              foreground: 'hsl(var(--muted-foreground))',
+            },
+            accent: {
+              DEFAULT: 'hsl(var(--accent))',
+              foreground: 'hsl(var(--accent-foreground))',
+            },
+            card: {
+              DEFAULT: 'hsl(var(--card))',
+              foreground: 'hsl(var(--card-foreground))',
+            },
+            destructive: {
+              DEFAULT: 'hsl(var(--destructive))',
+              foreground: 'hsl(var(--destructive-foreground))',
+            },
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="min-h-screen">
+  
+  <!-- ==================== NAVBAR ==================== -->
+  <nav id="navbar" class="fixed top-0 right-0 left-0 z-50 transition-all duration-300 glass shadow-soft py-3">
+    <div class="container mx-auto px-4 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center gap-3">
+        <img src="./assets/logo.png" alt="محلك - شي إن" class="h-10 w-auto">
+      </a>
+
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="./index.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">الرئيسية</a>
+        <a href="./about.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">من نحن</a>
+        <a href="./pricing.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">الأسعار</a>
+        <a href="./blogs.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">المدونة</a>
+        <a href="./faqs.html" class="text-primary font-medium">الأسئلة الشائعة</a>
+        <a href="./contact.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">تواصل معنا</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <button id="dark-mode-toggle" class="p-2 rounded-lg hover:bg-muted transition-colors" aria-label="Toggle dark mode">
+          <i id="sun-icon" data-lucide="sun" class="w-5 h-5" style="display: none;"></i>
+          <i id="moon-icon" data-lucide="moon" class="w-5 h-5"></i>
+        </button>
+
+        <a href="./login.html" class="hidden md:inline-flex btn-hero !py-2.5 !px-6 !text-base">
+          تسجيل الدخول
+        </a>
+
+        <button id="mobile-menu-button" class="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors" aria-label="Toggle menu">
+          <i id="menu-icon" data-lucide="menu" class="w-6 h-6"></i>
+          <i id="close-icon" data-lucide="x" class="w-6 h-6" style="display: none;"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu glass">
+      <div class="container mx-auto px-4 py-6 flex flex-col gap-4">
+        <a href="./index.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">الرئيسية</a>
+        <a href="./about.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">من نحن</a>
+        <a href="./pricing.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">الأسعار</a>
+        <a href="./blogs.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">المدونة</a>
+        <a href="./faqs.html" class="text-primary font-medium py-2">الأسئلة الشائعة</a>
+        <a href="./contact.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">تواصل معنا</a>
+        <a href="./login.html" class="btn-hero text-center mt-2">تسجيل الدخول</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="relative pt-32 pb-16 bg-gradient-hero overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">مركز المساعدة</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+          الأسئلة
+          <span class="text-gradient">الشائعة</span>
+        </h1>
+        <p class="text-lg md:text-xl text-muted-foreground mb-8">
+          إجابات على أكثر الأسئلة شيوعاً حول منصة محلك وخدماتها
+        </p>
+        
+        <!-- Search -->
+        <div class="max-w-xl mx-auto">
+          <div class="relative">
+            <input type="text" placeholder="ابحث عن سؤالك..." class="w-full px-6 py-4 pr-14 rounded-xl bg-card border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all">
+            <i data-lucide="search" class="absolute right-5 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ CATEGORIES ==================== -->
+  <section class="py-12 bg-background border-b border-border">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap justify-center gap-4">
+        <button class="faq-tab active px-6 py-3 rounded-xl bg-primary text-primary-foreground font-medium transition-all" data-category="all">الكل</button>
+        <button class="faq-tab px-6 py-3 rounded-xl bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary font-medium transition-all" data-category="general">عام</button>
+        <button class="faq-tab px-6 py-3 rounded-xl bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary font-medium transition-all" data-category="pricing">الأسعار والدفع</button>
+        <button class="faq-tab px-6 py-3 rounded-xl bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary font-medium transition-all" data-category="features">المميزات</button>
+        <button class="faq-tab px-6 py-3 rounded-xl bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary font-medium transition-all" data-category="support">الدعم الفني</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ACCORDION ==================== -->
+  <section class="py-24 bg-background">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto space-y-4">
+        
+        <!-- FAQ Item 1 -->
+        <div class="faq-item bg-card border border-border rounded-2xl overflow-hidden" data-category="general">
+          <button class="faq-trigger w-full flex items-center justify-between p-6 text-right hover:bg-muted/50 transition-colors">
+            <span class="text-lg font-semibold">ما هي منصة محلك؟</span>
+            <i data-lucide="plus" class="faq-icon w-6 h-6 text-primary transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-muted-foreground leading-relaxed">
+              محلك هي منصة أتمتة التجارة الإلكترونية الأولى في السعودية. نساعدك على استيراد المنتجات من الموردين العالميين، مزامنة الأسعار والمخزون تلقائياً، وإكمال الطلبات بنقرة واحدة. نتكامل مع أهم منصات التجارة الإلكترونية مثل سلة وزد وشوبيفاي.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item bg-card border border-border rounded-2xl overflow-hidden" data-category="general">
+          <button class="faq-trigger w-full flex items-center justify-between p-6 text-right hover:bg-muted/50 transition-colors">
+            <span class="text-lg font-semibold">هل أحتاج إلى خبرة تقنية لاستخدام المنصة؟</span>
+            <i data-lucide="plus" class="faq-icon w-6 h-6 text-primary transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-muted-foreground leading-relaxed">
+              لا على الإطلاق! صممنا المنصة لتكون سهلة الاستخدام حتى للمبتدئين. واجهتنا بسيطة وبديهية، ونقدم شروحات مفصلة ودعم فني على مدار الساعة لمساعدتك في كل خطوة.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item bg-card border border-border rounded-2xl overflow-hidden" data-category="pricing">
+          <button class="faq-trigger w-full flex items-center justify-between p-6 text-right hover:bg-muted/50 transition-colors">
+            <span class="text-lg font-semibold">ما هي خطط الأسعار المتاحة؟</span>
+            <i data-lucide="plus" class="faq-icon w-6 h-6 text-primary transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-muted-foreground leading-relaxed">
+              نقدم ثلاث خطط تناسب جميع الاحتياجات: الخطة المبتدئة بـ 99 ريال/شهر (حتى 100 منتج)، الخطة الاحترافية بـ 199 ريال/شهر (حتى 500 منتج)، والخطة المتقدمة بـ 399 ريال/شهر (منتجات غير محدودة). كما نقدم تجربة مجانية لمدة 14 يوماً.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item bg-card border border-border rounded-2xl overflow-hidden" data-category="pricing">
+          <button class="faq-trigger w-full flex items-center justify-between p-6 text-right hover:bg-muted/50 transition-colors">
+            <span class="text-lg font-semibold">هل يمكنني تغيير أو إلغاء اشتراكي؟</span>
+            <i data-lucide="plus" class="faq-icon w-6 h-6 text-primary transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-muted-foreground leading-relaxed">
+              نعم، يمكنك ترقية أو تخفيض خطتك في أي وقت. كما يمكنك إلغاء اشتراكك متى شئت دون أي رسوم إضافية. نقدم أيضاً ضمان استرداد المال خلال 30 يوماً من الاشتراك.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item bg-card border border-border rounded-2xl overflow-hidden" data-category="pricing">
+          <button class="faq-trigger w-full flex items-center justify-between p-6 text-right hover:bg-muted/50 transition-colors">
+            <span class="text-lg font-semibold">ما هي طرق الدفع المتاحة؟</span>
+            <i data-lucide="plus" class="faq-icon w-6 h-6 text-primary transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-muted-foreground leading-relaxed">
+              نقبل جميع بطاقات الائتمان (فيزا، ماستركارد، مدى)، التحويل البنكي، وأبل باي. كما نوفر خيار الدفع السنوي مع خصم 20% على جميع الخطط.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div class="faq-item bg-card border border-border rounded-2xl overflow-hidden" data-category="features">
+          <button class="faq-trigger w-full flex items-center justify-between p-6 text-right hover:bg-muted/50 transition-colors">
+            <span class="text-lg font-semibold">كيف تعمل ميزة استيراد المنتجات؟</span>
+            <i data-lucide="plus" class="faq-icon w-6 h-6 text-primary transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-muted-foreground leading-relaxed">
+              يمكنك استيراد أي منتج من الموردين المدعومين بنقرة واحدة. نستورد تلقائياً جميع تفاصيل المنتج (الصور، الأوصاف، الألوان، المقاسات) ونضيفها لمتجرك. يمكنك تعديل الأسعار وهوامش الربح قبل النشر.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 7 -->
+        <div class="faq-item bg-card border border-border rounded-2xl overflow-hidden" data-category="features">
+          <button class="faq-trigger w-full flex items-center justify-between p-6 text-right hover:bg-muted/50 transition-colors">
+            <span class="text-lg font-semibold">هل يتم تحديث المخزون والأسعار تلقائياً؟</span>
+            <i data-lucide="plus" class="faq-icon w-6 h-6 text-primary transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-muted-foreground leading-relaxed">
+              نعم! نظامنا يزامن المخزون والأسعار مع الموردين عدة مرات يومياً. إذا نفد منتج أو تغير سعره، يتم تحديث متجرك تلقائياً. يمكنك أيضاً تحديد قواعد لهامش الربح ليتم تطبيقها تلقائياً.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 8 -->
+        <div class="faq-item bg-card border border-border rounded-2xl overflow-hidden" data-category="features">
+          <button class="faq-trigger w-full flex items-center justify-between p-6 text-right hover:bg-muted/50 transition-colors">
+            <span class="text-lg font-semibold">مع أي منصات تتكامل محلك؟</span>
+            <i data-lucide="plus" class="faq-icon w-6 h-6 text-primary transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-muted-foreground leading-relaxed">
+              نتكامل مع أهم منصات التجارة الإلكترونية في السعودية والعالم: سلة، زد، شوبيفاي، ووكومرس. كما نتكامل مع موردين عالميين مثل شي إن، علي إكسبريس، وغيرهم.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 9 -->
+        <div class="faq-item bg-card border border-border rounded-2xl overflow-hidden" data-category="support">
+          <button class="faq-trigger w-full flex items-center justify-between p-6 text-right hover:bg-muted/50 transition-colors">
+            <span class="text-lg font-semibold">كيف يمكنني التواصل مع الدعم الفني؟</span>
+            <i data-lucide="plus" class="faq-icon w-6 h-6 text-primary transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-muted-foreground leading-relaxed">
+              فريق الدعم الفني متاح على مدار الساعة عبر الدردشة المباشرة، البريد الإلكتروني (support@mahalak.com)، أو الهاتف. كما توجد قاعدة معرفية شاملة تحتوي على شروحات ودروس تعليمية.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 10 -->
+        <div class="faq-item bg-card border border-border rounded-2xl overflow-hidden" data-category="support">
+          <button class="faq-trigger w-full flex items-center justify-between p-6 text-right hover:bg-muted/50 transition-colors">
+            <span class="text-lg font-semibold">هل توفرون تدريباً على استخدام المنصة؟</span>
+            <i data-lucide="plus" class="faq-icon w-6 h-6 text-primary transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-muted-foreground leading-relaxed">
+              نعم! نقدم جلسات تدريب مجانية لجميع المشتركين الجدد. كما توجد مكتبة فيديوهات تعليمية شاملة، ويمكن لمشتركي الخطة المتقدمة الحصول على مدير حساب مخصص وتدريب متقدم لفريقهم.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 11 -->
+        <div class="faq-item bg-card border border-border rounded-2xl overflow-hidden" data-category="general">
+          <button class="faq-trigger w-full flex items-center justify-between p-6 text-right hover:bg-muted/50 transition-colors">
+            <span class="text-lg font-semibold">كم من الوقت يستغرق الشحن للعملاء؟</span>
+            <i data-lucide="plus" class="faq-icon w-6 h-6 text-primary transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-muted-foreground leading-relaxed">
+              يختلف وقت الشحن حسب المورد وموقع العميل، لكن عادة يستغرق من 7-15 يوم عمل للوصول إلى السعودية. نوفر تتبع مباشر للشحنات حتى تتمكن أنت وعملاؤك من متابعة حالة الطلب.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 12 -->
+        <div class="faq-item bg-card border border-border rounded-2xl overflow-hidden" data-category="general">
+          <button class="faq-trigger w-full flex items-center justify-between p-6 text-right hover:bg-muted/50 transition-colors">
+            <span class="text-lg font-semibold">هل بياناتي آمنة على المنصة؟</span>
+            <i data-lucide="plus" class="faq-icon w-6 h-6 text-primary transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-muted-foreground leading-relaxed">
+              أمان بياناتك أولوية قصوى لدينا. نستخدم تشفير SSL/TLS لجميع الاتصالات، ونخزن البيانات في مراكز بيانات آمنة. كما نلتزم بأعلى معايير حماية البيانات ونقوم بعمليات نسخ احتياطي يومية.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STILL HAVE QUESTIONS ==================== -->
+  <section class="py-24 bg-gradient-primary text-white">
+    <div class="container mx-auto px-4 text-center">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">لم تجد إجابة سؤالك؟</h2>
+        <p class="text-lg text-white/80 mb-8">فريق الدعم الفني جاهز لمساعدتك على مدار الساعة</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="./contact.html" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-primary font-bold hover:scale-105 transition-transform">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            تواصل معنا
+          </a>
+          <a href="#" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 text-white font-bold hover:bg-white/20 transition-colors border border-white/20">
+            <i data-lucide="headphones" class="w-5 h-5"></i>
+            الدردشة المباشرة
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-card border-t border-border">
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div class="lg:col-span-2">
+          <img src="./assets/logo.png" alt="محلك - شي إن" class="h-12 w-auto mb-6">
+          <p class="text-muted-foreground mb-6 max-w-sm">منصة أتمتة التجارة الإلكترونية الأولى في السعودية. نساعدك على إدارة متجرك بذكاء وكفاءة.</p>
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-colors" aria-label="Twitter">
+              <i data-lucide="twitter" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-colors" aria-label="Instagram">
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-colors" aria-label="YouTube">
+              <i data-lucide="youtube" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-4">الصفحات</h4>
+          <ul class="space-y-3">
+            <li><a href="./index.html" class="text-muted-foreground hover:text-primary transition-colors">الرئيسية</a></li>
+            <li><a href="./about.html" class="text-muted-foreground hover:text-primary transition-colors">من نحن</a></li>
+            <li><a href="./pricing.html" class="text-muted-foreground hover:text-primary transition-colors">الأسعار</a></li>
+            <li><a href="./blogs.html" class="text-muted-foreground hover:text-primary transition-colors">المدونة</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-4">الدعم</h4>
+          <ul class="space-y-3">
+            <li><a href="./faqs.html" class="text-muted-foreground hover:text-primary transition-colors">الأسئلة الشائعة</a></li>
+            <li><a href="./contact.html" class="text-muted-foreground hover:text-primary transition-colors">تواصل معنا</a></li>
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">مركز المساعدة</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-4">قانوني</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">سياسة الخصوصية</a></li>
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">الشروط والأحكام</a></li>
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">سياسة الاسترجاع</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-muted-foreground text-sm">© 2026 محلك - شي إن. جميع الحقوق محفوظة.</p>
+        <div class="flex items-center gap-2 text-sm text-muted-foreground">
+          <span>صنع بـ</span>
+          <span class="text-destructive">❤</span>
+          <span>في السعودية</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./main.js"></script>
+  <script>
+    lucide.createIcons();
+    
+    // FAQ Accordion
+    document.querySelectorAll('.faq-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.parentElement;
+        const content = item.querySelector('.faq-content');
+        const icon = trigger.querySelector('.faq-icon');
+        
+        // Close others
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.querySelector('.faq-content').classList.add('hidden');
+            otherItem.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+          }
+        });
+        
+        // Toggle current
+        content.classList.toggle('hidden');
+        icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(45deg)';
+      });
+    });
+    
+    // FAQ Category Filter
+    document.querySelectorAll('.faq-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const category = tab.dataset.category;
+        
+        // Update active tab
+        document.querySelectorAll('.faq-tab').forEach(t => {
+          t.classList.remove('bg-primary', 'text-primary-foreground');
+          t.classList.add('bg-muted', 'text-muted-foreground');
+        });
+        tab.classList.remove('bg-muted', 'text-muted-foreground');
+        tab.classList.add('bg-primary', 'text-primary-foreground');
+        
+        // Filter items
+        document.querySelectorAll('.faq-item').forEach(item => {
+          if (category === 'all' || item.dataset.category === category) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

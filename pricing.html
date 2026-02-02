@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الأسعار | محلك - شي إن</title>
+  <meta name="description" content="خطط أسعار مرنة تناسب جميع احتياجات متجرك الإلكتروني. ابدأ مجاناً وترقي حسب نمو عملك.">
+  
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./styles.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            border: 'hsl(var(--border))',
+            background: 'hsl(var(--background))',
+            foreground: 'hsl(var(--foreground))',
+            primary: {
+              DEFAULT: 'hsl(var(--primary))',
+              foreground: 'hsl(var(--primary-foreground))',
+            },
+            secondary: {
+              DEFAULT: 'hsl(var(--secondary))',
+              foreground: 'hsl(var(--secondary-foreground))',
+            },
+            muted: {
+              DEFAULT: 'hsl(var(--muted))',
+              foreground: 'hsl(var(--muted-foreground))',
+            },
+            accent: {
+              DEFAULT: 'hsl(var(--accent))',
+              foreground: 'hsl(var(--accent-foreground))',
+            },
+            card: {
+              DEFAULT: 'hsl(var(--card))',
+              foreground: 'hsl(var(--card-foreground))',
+            },
+            destructive: {
+              DEFAULT: 'hsl(var(--destructive))',
+              foreground: 'hsl(var(--destructive-foreground))',
+            },
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="min-h-screen">
+  
+  <!-- ==================== NAVBAR ==================== -->
+  <nav id="navbar" class="fixed top-0 right-0 left-0 z-50 transition-all duration-300 glass shadow-soft py-3">
+    <div class="container mx-auto px-4 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center gap-3">
+        <img src="./assets/logo.png" alt="محلك - شي إن" class="h-10 w-auto">
+      </a>
+
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="./index.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">الرئيسية</a>
+        <a href="./about.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">من نحن</a>
+        <a href="./pricing.html" class="text-primary font-medium">الأسعار</a>
+        <a href="./blogs.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">المدونة</a>
+        <a href="./faqs.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">الأسئلة الشائعة</a>
+        <a href="./contact.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">تواصل معنا</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <button id="dark-mode-toggle" class="p-2 rounded-lg hover:bg-muted transition-colors" aria-label="Toggle dark mode">
+          <i id="sun-icon" data-lucide="sun" class="w-5 h-5" style="display: none;"></i>
+          <i id="moon-icon" data-lucide="moon" class="w-5 h-5"></i>
+        </button>
+
+        <a href="./login.html" class="hidden md:inline-flex btn-hero !py-2.5 !px-6 !text-base">
+          تسجيل الدخول
+        </a>
+
+        <button id="mobile-menu-button" class="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors" aria-label="Toggle menu">
+          <i id="menu-icon" data-lucide="menu" class="w-6 h-6"></i>
+          <i id="close-icon" data-lucide="x" class="w-6 h-6" style="display: none;"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu glass">
+      <div class="container mx-auto px-4 py-6 flex flex-col gap-4">
+        <a href="./index.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">الرئيسية</a>
+        <a href="./about.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">من نحن</a>
+        <a href="./pricing.html" class="text-primary font-medium py-2">الأسعار</a>
+        <a href="./blogs.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">المدونة</a>
+        <a href="./faqs.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">الأسئلة الشائعة</a>
+        <a href="./contact.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">تواصل معنا</a>
+        <a href="./login.html" class="btn-hero text-center mt-2">تسجيل الدخول</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="relative pt-32 pb-16 bg-gradient-hero overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">الأسعار</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+          خطط مرنة تناسب
+          <span class="text-gradient">نمو عملك</span>
+        </h1>
+        <p class="text-lg md:text-xl text-muted-foreground mb-8">
+          ابدأ مجاناً وترقي حسب احتياجاتك. جميع الخطط تشمل تجربة مجانية 14 يوماً
+        </p>
+        
+        <!-- Billing Toggle -->
+        <!-- <div class="flex items-center justify-center gap-4 mb-8">
+          <span class="text-foreground font-medium">شهري</span>
+          <button id="billing-toggle" class="relative w-16 h-8 rounded-full bg-primary/20 transition-colors">
+            <span id="billing-toggle-dot" class="absolute top-1 left-1 w-6 h-6 rounded-full bg-primary transition-transform"></span>
+          </button>
+          <span class="text-foreground font-medium">سنوي</span>
+          <span class="px-3 py-1 rounded-full bg-accent text-accent-foreground text-sm font-medium">وفر 20%</span>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRICING CARDS ==================== -->
+  <section class="py-24 bg-background">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        
+        <!-- Starter Plan -->
+        <div class="pricing-card bg-card border border-border rounded-2xl p-8 shadow-soft hover:shadow-elevated transition-all duration-300 fade-target" data-delay="0">
+          <div class="mb-6">
+            <h3 class="text-xl font-bold mb-2">المبتدئة</h3>
+            <p class="text-muted-foreground">للتجار الجدد الذين يبدأون رحلتهم</p>
+          </div>
+          
+          <div class="mb-6">
+            <div class="flex items-baseline gap-2">
+              <span class="text-5xl font-bold price-monthly">99</span>
+              <span class="text-5xl font-bold price-yearly hidden">79</span>
+              <span class="text-muted-foreground">ريال/شهر</span>
+            </div>
+            <p class="text-sm text-muted-foreground mt-2 price-yearly hidden">يُدفع سنوياً (948 ريال)</p>
+          </div>
+          
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-primary"></i></div>
+              <span>حتى 100 منتج</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-primary"></i></div>
+              <span>استيراد تلقائي للمنتجات</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-primary"></i></div>
+              <span>مزامنة المخزون يومياً</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-primary"></i></div>
+              <span>دعم عبر البريد الإلكتروني</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-primary"></i></div>
+              <span>تكامل مع سلة وزد</span>
+            </li>
+          </ul>
+          
+          <button class="w-full py-4 rounded-xl font-semibold transition-all duration-300 btn-hero-outline">ابدأ مجاناً</button>
+        </div>
+
+        <!-- Professional Plan -->
+        <div class="pricing-card popular bg-gradient-primary text-white rounded-2xl p-8 shadow-glow relative fade-target" data-delay="0.1">
+          <div class="absolute -top-4 right-1/2 translate-x-1/2">
+            <span class="px-4 py-1 rounded-full bg-accent text-accent-foreground text-sm font-bold">الأكثر شيوعاً</span>
+          </div>
+          
+          <div class="mb-6">
+            <h3 class="text-xl font-bold mb-2">الاحترافية</h3>
+            <p class="text-white/80">للتجار النشطين الذين يريدون التوسع</p>
+          </div>
+          
+          <div class="mb-6">
+            <div class="flex items-baseline gap-2">
+              <span class="text-5xl font-bold price-monthly">199</span>
+              <span class="text-5xl font-bold price-yearly hidden">159</span>
+              <span class="text-white/80">ريال/شهر</span>
+            </div>
+            <p class="text-sm text-white/60 mt-2 price-yearly hidden">يُدفع سنوياً (1,908 ريال)</p>
+          </div>
+          
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+              <span>حتى 500 منتج</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+              <span>كل مميزات المبتدئة</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+              <span>مزامنة المخزون كل ساعة</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+              <span>دعم عبر الدردشة المباشرة</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+              <span>إكمال الطلبات تلقائياً</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+              <span>تحليلات متقدمة</span>
+            </li>
+          </ul>
+          
+          <button class="w-full py-4 rounded-xl font-semibold transition-all duration-300 bg-white text-primary hover:scale-105">ابدأ مجاناً</button>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="pricing-card bg-card border border-border rounded-2xl p-8 shadow-soft hover:shadow-elevated transition-all duration-300 fade-target" data-delay="0.2">
+          <div class="mb-6">
+            <h3 class="text-xl font-bold mb-2">المتقدمة</h3>
+            <p class="text-muted-foreground">للمتاجر الكبيرة والفرق</p>
+          </div>
+          
+          <div class="mb-6">
+            <div class="flex items-baseline gap-2">
+              <span class="text-5xl font-bold price-monthly">399</span>
+              <span class="text-5xl font-bold price-yearly hidden">319</span>
+              <span class="text-muted-foreground">ريال/شهر</span>
+            </div>
+            <p class="text-sm text-muted-foreground mt-2 price-yearly hidden">يُدفع سنوياً (3,828 ريال)</p>
+          </div>
+          
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-primary"></i></div>
+              <span>منتجات غير محدودة</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-primary"></i></div>
+              <span>كل مميزات الاحترافية</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-primary"></i></div>
+              <span>مزامنة لحظية</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-primary"></i></div>
+              <span>مدير حساب مخصص</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-primary"></i></div>
+              <span>SLA مضمون</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-primary"></i></div>
+              <span>تدريب الفريق</span>
+            </li>
+          </ul>
+          
+          <button class="w-full py-4 rounded-xl font-semibold transition-all duration-300 btn-hero-outline">تواصل معنا</button>
+        </div>
+        
+      </div>
+
+      <!-- Money back guarantee -->
+      <div class="text-center mt-12">
+        <div class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-muted">
+          <i data-lucide="shield-check" class="w-5 h-5 text-primary"></i>
+          <span class="text-muted-foreground">ضمان استرداد المال خلال 30 يوم • بدون التزام طويل المدى</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURES COMPARISON ==================== -->
+  <section class="py-24 bg-muted/30">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">مقارنة تفصيلية للخطط</h2>
+        <p class="text-muted-foreground text-lg">اختر الخطة المناسبة لاحتياجات متجرك</p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full max-w-5xl mx-auto bg-card rounded-2xl border border-border overflow-hidden">
+          <thead>
+            <tr class="border-b border-border">
+              <th class="p-6 text-right font-bold">الميزة</th>
+              <th class="p-6 text-center font-bold">المبتدئة</th>
+              <th class="p-6 text-center font-bold bg-primary/5">الاحترافية</th>
+              <th class="p-6 text-center font-bold">المتقدمة</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-border">
+              <td class="p-6">عدد المنتجات</td>
+              <td class="p-6 text-center">100</td>
+              <td class="p-6 text-center bg-primary/5">500</td>
+              <td class="p-6 text-center">غير محدود</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="p-6">استيراد المنتجات</td>
+              <td class="p-6 text-center"><i data-lucide="check" class="w-5 h-5 text-primary mx-auto"></i></td>
+              <td class="p-6 text-center bg-primary/5"><i data-lucide="check" class="w-5 h-5 text-primary mx-auto"></i></td>
+              <td class="p-6 text-center"><i data-lucide="check" class="w-5 h-5 text-primary mx-auto"></i></td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="p-6">مزامنة المخزون</td>
+              <td class="p-6 text-center">يومياً</td>
+              <td class="p-6 text-center bg-primary/5">كل ساعة</td>
+              <td class="p-6 text-center">لحظية</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="p-6">إكمال الطلبات التلقائي</td>
+              <td class="p-6 text-center"><i data-lucide="x" class="w-5 h-5 text-muted-foreground mx-auto"></i></td>
+              <td class="p-6 text-center bg-primary/5"><i data-lucide="check" class="w-5 h-5 text-primary mx-auto"></i></td>
+              <td class="p-6 text-center"><i data-lucide="check" class="w-5 h-5 text-primary mx-auto"></i></td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="p-6">تحليلات متقدمة</td>
+              <td class="p-6 text-center"><i data-lucide="x" class="w-5 h-5 text-muted-foreground mx-auto"></i></td>
+              <td class="p-6 text-center bg-primary/5"><i data-lucide="check" class="w-5 h-5 text-primary mx-auto"></i></td>
+              <td class="p-6 text-center"><i data-lucide="check" class="w-5 h-5 text-primary mx-auto"></i></td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="p-6">الدعم الفني</td>
+              <td class="p-6 text-center">بريد إلكتروني</td>
+              <td class="p-6 text-center bg-primary/5">دردشة مباشرة</td>
+              <td class="p-6 text-center">أولوية + هاتف</td>
+            </tr>
+            <tr>
+              <td class="p-6">مدير حساب مخصص</td>
+              <td class="p-6 text-center"><i data-lucide="x" class="w-5 h-5 text-muted-foreground mx-auto"></i></td>
+              <td class="p-6 text-center bg-primary/5"><i data-lucide="x" class="w-5 h-5 text-muted-foreground mx-auto"></i></td>
+              <td class="p-6 text-center"><i data-lucide="check" class="w-5 h-5 text-primary mx-auto"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ==================== -->
+  <section class="py-24 bg-background">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">أسئلة شائعة عن الأسعار</h2>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-4">
+        <div class="bg-card border border-border rounded-2xl p-6">
+          <h3 class="font-bold mb-2">هل يمكنني تغيير خطتي لاحقاً؟</h3>
+          <p class="text-muted-foreground">نعم، يمكنك ترقية أو تخفيض خطتك في أي وقت. التغييرات تسري فوراً ويتم احتساب الفرق تناسبياً.</p>
+        </div>
+        <div class="bg-card border border-border rounded-2xl p-6">
+          <h3 class="font-bold mb-2">هل هناك رسوم إضافية مخفية؟</h3>
+          <p class="text-muted-foreground">لا، الأسعار المعروضة شاملة لجميع الميزات المذكورة. لا توجد أي رسوم إضافية أو مخفية.</p>
+        </div>
+        <div class="bg-card border border-border rounded-2xl p-6">
+          <h3 class="font-bold mb-2">كيف تعمل التجربة المجانية؟</h3>
+          <p class="text-muted-foreground">يمكنك تجربة أي خطة مجاناً لمدة 14 يوماً بجميع مميزاتها. لا حاجة لبطاقة ائتمان للبدء.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA ==================== -->
+  <section class="py-24 bg-gradient-primary text-white">
+    <div class="container mx-auto px-4 text-center">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">جاهز للبدء؟</h2>
+        <p class="text-lg text-white/80 mb-8">ابدأ تجربتك المجانية اليوم واكتشف كيف يمكن لمحلك أن يحول طريقة إدارة متجرك</p>
+        <a href="./register.html" class="inline-flex items-center justify-center gap-2 px-10 py-5 text-xl font-bold rounded-xl bg-white text-primary hover:scale-105 transition-transform shadow-lg">
+          ابدأ تجربتك المجانية
+          <i data-lucide="arrow-left" class="w-6 h-6"></i>
+        </a>
+        <p class="mt-6 text-white/60 text-sm">لا حاجة لبطاقة ائتمان • إلغاء في أي وقت</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-card border-t border-border">
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div class="lg:col-span-2">
+          <img src="./assets/logo.png" alt="محلك - شي إن" class="h-12 w-auto mb-6">
+          <p class="text-muted-foreground mb-6 max-w-sm">منصة أتمتة التجارة الإلكترونية الأولى في السعودية. نساعدك على إدارة متجرك بذكاء وكفاءة.</p>
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-colors" aria-label="Twitter">
+              <i data-lucide="twitter" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-colors" aria-label="Instagram">
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-colors" aria-label="YouTube">
+              <i data-lucide="youtube" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-4">الصفحات</h4>
+          <ul class="space-y-3">
+            <li><a href="./index.html" class="text-muted-foreground hover:text-primary transition-colors">الرئيسية</a></li>
+            <li><a href="./about.html" class="text-muted-foreground hover:text-primary transition-colors">من نحن</a></li>
+            <li><a href="./pricing.html" class="text-muted-foreground hover:text-primary transition-colors">الأسعار</a></li>
+            <li><a href="./blogs.html" class="text-muted-foreground hover:text-primary transition-colors">المدونة</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-4">الدعم</h4>
+          <ul class="space-y-3">
+            <li><a href="./faqs.html" class="text-muted-foreground hover:text-primary transition-colors">الأسئلة الشائعة</a></li>
+            <li><a href="./contact.html" class="text-muted-foreground hover:text-primary transition-colors">تواصل معنا</a></li>
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">مركز المساعدة</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-4">قانوني</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">سياسة الخصوصية</a></li>
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">الشروط والأحكام</a></li>
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">سياسة الاسترجاع</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-muted-foreground text-sm">© 2026 محلك - شي إن. جميع الحقوق محفوظة.</p>
+        <div class="flex items-center gap-2 text-sm text-muted-foreground">
+          <span>صنع بـ</span>
+          <span class="text-destructive">❤</span>
+          <span>في السعودية</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./main.js"></script>
+  <script>
+    lucide.createIcons();
+    
+    // Billing Toggle
+    let isYearly = false;
+    const billingToggle = document.getElementById('billing-toggle');
+    const billingDot = document.getElementById('billing-toggle-dot');
+    
+    billingToggle?.addEventListener('click', () => {
+      isYearly = !isYearly;
+      
+      if (isYearly) {
+        billingDot.style.transform = 'translateX(-2rem)';
+        billingToggle.classList.add('bg-primary');
+        billingToggle.classList.remove('bg-primary/20');
+      } else {
+        billingDot.style.transform = 'translateX(0)';
+        billingToggle.classList.remove('bg-primary');
+        billingToggle.classList.add('bg-primary/20');
+      }
+      
+      document.querySelectorAll('.price-monthly').forEach(el => {
+        el.classList.toggle('hidden', isYearly);
+      });
+      document.querySelectorAll('.price-yearly').forEach(el => {
+        el.classList.toggle('hidden', !isYearly);
+      });
+    });
+  </script>
+</body>
+</html>

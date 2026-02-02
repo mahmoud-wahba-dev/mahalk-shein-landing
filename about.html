@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>من نحن | محلك - شي إن</title>
+  <meta name="description" content="تعرف على قصة محلك، منصة أتمتة التجارة الإلكترونية الأولى في السعودية. رؤيتنا، قيمنا، وفريقنا.">
+  
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./styles.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            border: 'hsl(var(--border))',
+            background: 'hsl(var(--background))',
+            foreground: 'hsl(var(--foreground))',
+            primary: {
+              DEFAULT: 'hsl(var(--primary))',
+              foreground: 'hsl(var(--primary-foreground))',
+            },
+            secondary: {
+              DEFAULT: 'hsl(var(--secondary))',
+              foreground: 'hsl(var(--secondary-foreground))',
+            },
+            muted: {
+              DEFAULT: 'hsl(var(--muted))',
+              foreground: 'hsl(var(--muted-foreground))',
+            },
+            accent: {
+              DEFAULT: 'hsl(var(--accent))',
+              foreground: 'hsl(var(--accent-foreground))',
+            },
+            card: {
+              DEFAULT: 'hsl(var(--card))',
+              foreground: 'hsl(var(--card-foreground))',
+            },
+            destructive: {
+              DEFAULT: 'hsl(var(--destructive))',
+              foreground: 'hsl(var(--destructive-foreground))',
+            },
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="min-h-screen">
+  
+  <!-- ==================== NAVBAR ==================== -->
+  <nav id="navbar" class="fixed top-0 right-0 left-0 z-50 transition-all duration-300 glass shadow-soft py-3">
+    <div class="container mx-auto px-4 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center gap-3">
+        <img src="./assets/logo.png" alt="محلك - شي إن" class="h-10 w-auto">
+      </a>
+
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="./index.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">الرئيسية</a>
+        <a href="./about.html" class="text-primary font-medium">من نحن</a>
+        <a href="./pricing.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">الأسعار</a>
+        <a href="./blogs.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">المدونة</a>
+        <a href="./faqs.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">الأسئلة الشائعة</a>
+        <a href="./contact.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">تواصل معنا</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <button id="dark-mode-toggle" class="p-2 rounded-lg hover:bg-muted transition-colors" aria-label="Toggle dark mode">
+          <i id="sun-icon" data-lucide="sun" class="w-5 h-5" style="display: none;"></i>
+          <i id="moon-icon" data-lucide="moon" class="w-5 h-5"></i>
+        </button>
+
+        <a href="./login.html" class="hidden md:inline-flex btn-hero !py-2.5 !px-6 !text-base">
+          تسجيل الدخول
+        </a>
+
+        <button id="mobile-menu-button" class="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors" aria-label="Toggle menu">
+          <i id="menu-icon" data-lucide="menu" class="w-6 h-6"></i>
+          <i id="close-icon" data-lucide="x" class="w-6 h-6" style="display: none;"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu glass">
+      <div class="container mx-auto px-4 py-6 flex flex-col gap-4">
+        <a href="./index.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">الرئيسية</a>
+        <a href="./about.html" class="text-primary font-medium py-2">من نحن</a>
+        <a href="./pricing.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">الأسعار</a>
+        <a href="./blogs.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">المدونة</a>
+        <a href="./faqs.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">الأسئلة الشائعة</a>
+        <a href="./contact.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">تواصل معنا</a>
+        <a href="./login.html" class="btn-hero text-center mt-2">تسجيل الدخول</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="relative pt-32 pb-24 bg-gradient-hero overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">من نحن</span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            نُمكّن التجار من
+            <span class="text-gradient">النجاح الرقمي</span>
+          </h1>
+          <p class="text-lg md:text-xl text-muted-foreground mb-8">
+            منذ انطلاقتنا، هدفنا واحد: تبسيط التجارة الإلكترونية وجعلها في متناول الجميع. نؤمن بأن كل تاجر يستحق الأدوات التي تساعده على النجاح.
+          </p>
+          <div class="flex flex-wrap gap-8">
+            <div class="text-center">
+              <div class="text-4xl font-bold text-gradient mb-1">+10K</div>
+              <div class="text-muted-foreground">تاجر نشط</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-gradient mb-1">+2M</div>
+              <div class="text-muted-foreground">طلب شهرياً</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-gradient mb-1">99.9%</div>
+              <div class="text-muted-foreground">وقت التشغيل</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-primary rounded-2xl blur-3xl opacity-20"></div>
+          <img src="./assets/about-team.png" alt="فريق محلك" class="relative rounded-2xl shadow-elevated w-full">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== OUR STORY ==================== -->
+  <section class="py-24 bg-background">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">قصتنا</span>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">من فكرة إلى منصة رائدة</h2>
+        </div>
+        
+        <div class="space-y-8 text-lg text-muted-foreground leading-relaxed">
+          <p>
+            بدأت قصة محلك في عام 2022 عندما لاحظ مؤسسونا التحديات التي يواجهها التجار السعوديون في إدارة متاجرهم الإلكترونية. كانت العمليات اليدوية تستهلك ساعات من وقتهم الثمين، والأخطاء البشرية تكلفهم المال والعملاء.
+          </p>
+          <p>
+            قررنا بناء حل متكامل يجمع بين سهولة الاستخدام وقوة الأتمتة. بدأنا بفريق صغير من 3 مهندسين شغوفين بالتقنية والتجارة الإلكترونية، ونمونا لنصبح فريقاً من أكثر من 50 متخصصاً.
+          </p>
+          <p>
+            اليوم، تخدم محلك أكثر من 10,000 تاجر نشط في المملكة العربية السعودية ومنطقة الخليج، ونفخر بأننا نساعدهم على توفير الوقت وزيادة أرباحهم بشكل ملموس.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== OUR VALUES ==================== -->
+  <section class="py-24 bg-muted/30">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">قيمنا</span>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">المبادئ التي توجهنا</h2>
+        <p class="text-muted-foreground text-lg max-w-2xl mx-auto">قيمنا الأساسية هي البوصلة التي توجه كل قرار نتخذه</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-card border border-border rounded-2xl p-8 text-center shadow-soft hover:shadow-elevated transition-all duration-300 fade-target" data-delay="0">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="lightbulb" class="w-8 h-8 text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">الابتكار</h3>
+          <p class="text-muted-foreground">نسعى دائماً لإيجاد حلول جديدة ومبتكرة تجعل حياة التجار أسهل</p>
+        </div>
+
+        <div class="bg-card border border-border rounded-2xl p-8 text-center shadow-soft hover:shadow-elevated transition-all duration-300 fade-target" data-delay="0.1">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="heart" class="w-8 h-8 text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">الشغف</h3>
+          <p class="text-muted-foreground">نحب ما نفعله ونضع قلوبنا في كل منتج نبنيه وكل خدمة نقدمها</p>
+        </div>
+
+        <div class="bg-card border border-border rounded-2xl p-8 text-center shadow-soft hover:shadow-elevated transition-all duration-300 fade-target" data-delay="0.2">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="shield" class="w-8 h-8 text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">الثقة</h3>
+          <p class="text-muted-foreground">نبني علاقات طويلة المدى مع عملائنا مبنية على الشفافية والمصداقية</p>
+        </div>
+
+        <div class="bg-card border border-border rounded-2xl p-8 text-center shadow-soft hover:shadow-elevated transition-all duration-300 fade-target" data-delay="0.3">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="users" class="w-8 h-8 text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">العميل أولاً</h3>
+          <p class="text-muted-foreground">كل قرار نتخذه يبدأ بسؤال واحد: كيف سيستفيد عملاؤنا من هذا؟</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== OUR MISSION ==================== -->
+  <section class="py-24 bg-gradient-primary text-white overflow-hidden">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="inline-block px-4 py-2 rounded-full bg-white/10 text-white text-sm font-medium mb-4">رؤيتنا ورسالتنا</span>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">نحو مستقبل التجارة الذكية</h2>
+          
+          <div class="space-y-8">
+            <div>
+              <h3 class="text-xl font-bold mb-3 flex items-center gap-3">
+                <i data-lucide="eye" class="w-6 h-6 text-accent"></i>
+                رؤيتنا
+              </h3>
+              <p class="text-white/80 text-lg">
+                أن نكون المنصة الأولى التي يفكر فيها أي تاجر عربي عندما يريد بدء أو توسيع تجارته الإلكترونية.
+              </p>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-bold mb-3 flex items-center gap-3">
+                <i data-lucide="target" class="w-6 h-6 text-accent"></i>
+                رسالتنا
+              </h3>
+              <p class="text-white/80 text-lg">
+                تمكين التجار من خلال أتمتة العمليات المملة، حتى يتمكنوا من التركيز على ما يهم حقاً: خدمة عملائهم ونمو أعمالهم.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-6">
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/20">
+            <div class="text-5xl font-bold mb-2">2022</div>
+            <div class="text-white/70">سنة التأسيس</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/20">
+            <div class="text-5xl font-bold mb-2">+50</div>
+            <div class="text-white/70">فرد في الفريق</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/20">
+            <div class="text-5xl font-bold mb-2">+10K</div>
+            <div class="text-white/70">تاجر نشط</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/20">
+            <div class="text-5xl font-bold mb-2">6</div>
+            <div class="text-white/70">دول مخدومة</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHY CHOOSE US ==================== -->
+  <section class="py-24 bg-background">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">لماذا محلك؟</span>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">ما الذي يميزنا</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-card border border-border rounded-2xl p-8 shadow-soft hover:shadow-elevated transition-all duration-300 fade-target" data-delay="0">
+          <div class="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6">
+            <i data-lucide="zap" class="w-7 h-7 text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">تقنية متقدمة</h3>
+          <p class="text-muted-foreground">نستخدم أحدث التقنيات والذكاء الاصطناعي لتوفير تجربة سلسة وفعالة</p>
+        </div>
+
+        <div class="bg-card border border-border rounded-2xl p-8 shadow-soft hover:shadow-elevated transition-all duration-300 fade-target" data-delay="0.1">
+          <div class="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6">
+            <i data-lucide="headphones" class="w-7 h-7 text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">دعم استثنائي</h3>
+          <p class="text-muted-foreground">فريق دعم محلي متخصص متاح على مدار الساعة لمساعدتك في أي وقت</p>
+        </div>
+
+        <div class="bg-card border border-border rounded-2xl p-8 shadow-soft hover:shadow-elevated transition-all duration-300 fade-target" data-delay="0.2">
+          <div class="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6">
+            <i data-lucide="globe" class="w-7 h-7 text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">فهم محلي</h3>
+          <p class="text-muted-foreground">نفهم السوق السعودي والخليجي ونصمم حلولنا لتناسب احتياجاتكم</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA ==================== -->
+  <section class="py-24 bg-muted/30">
+    <div class="container mx-auto px-4 text-center">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">انضم إلى آلاف التجار الناجحين</h2>
+        <p class="text-lg text-muted-foreground mb-8">ابدأ رحلتك معنا اليوم واكتشف كيف يمكن لمحلك أن يحول طريقة إدارة متجرك</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="./register.html" class="btn-hero">
+            ابدأ تجربتك المجانية
+            <i data-lucide="arrow-left" class="w-5 h-5"></i>
+          </a>
+          <a href="./contact.html" class="btn-hero-outline">
+            تواصل معنا
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-card border-t border-border">
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div class="lg:col-span-2">
+          <img src="./assets/logo.png" alt="محلك - شي إن" class="h-12 w-auto mb-6">
+          <p class="text-muted-foreground mb-6 max-w-sm">منصة أتمتة التجارة الإلكترونية الأولى في السعودية. نساعدك على إدارة متجرك بذكاء وكفاءة.</p>
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-colors" aria-label="Twitter">
+              <i data-lucide="twitter" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-colors" aria-label="Instagram">
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-colors" aria-label="YouTube">
+              <i data-lucide="youtube" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-4">الصفحات</h4>
+          <ul class="space-y-3">
+            <li><a href="./index.html" class="text-muted-foreground hover:text-primary transition-colors">الرئيسية</a></li>
+            <li><a href="./about.html" class="text-muted-foreground hover:text-primary transition-colors">من نحن</a></li>
+            <li><a href="./pricing.html" class="text-muted-foreground hover:text-primary transition-colors">الأسعار</a></li>
+            <li><a href="./blogs.html" class="text-muted-foreground hover:text-primary transition-colors">المدونة</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-4">الدعم</h4>
+          <ul class="space-y-3">
+            <li><a href="./faqs.html" class="text-muted-foreground hover:text-primary transition-colors">الأسئلة الشائعة</a></li>
+            <li><a href="./contact.html" class="text-muted-foreground hover:text-primary transition-colors">تواصل معنا</a></li>
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">مركز المساعدة</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-4">قانوني</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">سياسة الخصوصية</a></li>
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">الشروط والأحكام</a></li>
+            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">سياسة الاسترجاع</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-muted-foreground text-sm">© 2026 محلك - شي إن. جميع الحقوق محفوظة.</p>
+        <div class="flex items-center gap-2 text-sm text-muted-foreground">
+          <span>صنع بـ</span>
+          <span class="text-destructive">❤</span>
+          <span>في السعودية</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./main.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

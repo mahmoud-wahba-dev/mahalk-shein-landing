@@ -57,34 +57,31 @@
 <body class="min-h-screen">
   
   <!-- ==================== NAVBAR ==================== -->
-  <nav id="navbar" class="fixed top-0 right-0 left-0 z-50 transition-all duration-300 bg-transparent py-5">
+  <nav id="navbar" class="fixed top-0 right-0 left-0 z-50 transition-all duration-300 glass shadow-soft py-3">
     <div class="container mx-auto px-4 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="#" class="flex items-center gap-3">
+      <a href="./index.html" class="flex items-center gap-3">
         <img src="./assets/logo.png" alt="محلك - شي إن" class="h-10 w-auto">
       </a>
 
-      <!-- Desktop Navigation -->
       <div class="hidden lg:flex items-center gap-8">
-        <a href="#hero" class="text-foreground/80 hover:text-primary transition-colors font-medium">الرئيسية</a>
-        <a href="#features" class="text-foreground/80 hover:text-primary transition-colors font-medium">المميزات</a>
-        <a href="#how-it-works" class="text-foreground/80 hover:text-primary transition-colors font-medium">كيف نعمل</a>
-        <a href="#integrations" class="text-foreground/80 hover:text-primary transition-colors font-medium">التكاملات</a>
-        <a href="#testimonials" class="text-foreground/80 hover:text-primary transition-colors font-medium">آراء العملاء</a>
+        <a href="./index.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">الرئيسية</a>
+        <a href="./about.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">من نحن</a>
+        <a href="./pricing.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">الأسعار</a>
+        <a href="./blogs.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">المدونة</a>
+        <a href="./faqs.html" class="text-foreground/80 hover:text-primary transition-colors font-medium">الأسئلة الشائعة</a>
+        <a href="./contact.html" class="text-primary font-medium">تواصل معنا</a>
       </div>
 
-      <!-- Actions -->
       <div class="flex items-center gap-4">
         <button id="dark-mode-toggle" class="p-2 rounded-lg hover:bg-muted transition-colors" aria-label="Toggle dark mode">
           <i id="sun-icon" data-lucide="sun" class="w-5 h-5" style="display: none;"></i>
           <i id="moon-icon" data-lucide="moon" class="w-5 h-5"></i>
         </button>
 
-        <a href="#cta" class="hidden md:inline-flex btn-hero !py-2.5 !px-6 !text-base">
-          ابدأ مجاناً
+        <a href="./login.html" class="hidden md:inline-flex btn-hero !py-2.5 !px-6 !text-base">
+          تسجيل الدخول
         </a>
 
-        <!-- Mobile Menu Button -->
         <button id="mobile-menu-button" class="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors" aria-label="Toggle menu">
           <i id="menu-icon" data-lucide="menu" class="w-6 h-6"></i>
           <i id="close-icon" data-lucide="x" class="w-6 h-6" style="display: none;"></i>
@@ -92,18 +89,19 @@
       </div>
     </div>
 
-    <!-- Mobile Menu -->
     <div id="mobile-menu" class="mobile-menu glass">
       <div class="container mx-auto px-4 py-6 flex flex-col gap-4">
-        <a href="#hero" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">الرئيسية</a>
-        <a href="#features" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">المميزات</a>
-        <a href="#how-it-works" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">كيف نعمل</a>
-        <a href="#integrations" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">التكاملات</a>
-        <a href="#testimonials" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">آراء العملاء</a>
-        <a href="#cta" class="btn-hero text-center mt-2">ابدأ مجاناً</a>
+        <a href="./index.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">الرئيسية</a>
+        <a href="./about.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">من نحن</a>
+        <a href="./pricing.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">الأسعار</a>
+        <a href="./blogs.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">المدونة</a>
+        <a href="./faqs.html" class="text-foreground/80 hover:text-primary transition-colors font-medium py-2">الأسئلة الشائعة</a>
+        <a href="./contact.html" class="text-primary font-medium py-2">تواصل معنا</a>
+        <a href="./login.html" class="btn-hero text-center mt-2">تسجيل الدخول</a>
       </div>
     </div>
   </nav>
+
 
   <!-- ==================== HERO SECTION ==================== -->
   <section id="hero" class="relative min-h-screen flex items-center bg-gradient-hero overflow-hidden pt-24">
@@ -1226,7 +1224,6 @@
   <footer class="bg-card border-t border-border">
     <div class="container mx-auto px-4 py-16">
       <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
-        <!-- Brand -->
         <div class="lg:col-span-2">
           <img src="./assets/logo.png" alt="محلك - شي إن" class="h-12 w-auto mb-6">
           <p class="text-muted-foreground mb-6 max-w-sm">منصة أتمتة التجارة الإلكترونية الأولى في السعودية. نساعدك على إدارة متجرك بذكاء وكفاءة.</p>
@@ -1243,22 +1240,22 @@
           </div>
         </div>
 
-        <!-- Links -->
         <div>
-          <h4 class="font-bold mb-4">المنتج</h4>
+          <h4 class="font-bold mb-4">الصفحات</h4>
           <ul class="space-y-3">
-            <li><a href="#features" class="text-muted-foreground hover:text-primary transition-colors">المميزات</a></li>
-            <li><a href="#pricing" class="text-muted-foreground hover:text-primary transition-colors">التسعير</a></li>
-            <li><a href="#integrations" class="text-muted-foreground hover:text-primary transition-colors">التكاملات</a></li>
+            <li><a href="./index.html" class="text-muted-foreground hover:text-primary transition-colors">الرئيسية</a></li>
+            <li><a href="./about.html" class="text-muted-foreground hover:text-primary transition-colors">من نحن</a></li>
+            <li><a href="./pricing.html" class="text-muted-foreground hover:text-primary transition-colors">الأسعار</a></li>
+            <li><a href="./blogs.html" class="text-muted-foreground hover:text-primary transition-colors">المدونة</a></li>
           </ul>
         </div>
 
         <div>
           <h4 class="font-bold mb-4">الدعم</h4>
           <ul class="space-y-3">
+            <li><a href="./faqs.html" class="text-muted-foreground hover:text-primary transition-colors">الأسئلة الشائعة</a></li>
+            <li><a href="./contact.html" class="text-muted-foreground hover:text-primary transition-colors">تواصل معنا</a></li>
             <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">مركز المساعدة</a></li>
-            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">تواصل معنا</a></li>
-            <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">الأسئلة الشائعة</a></li>
           </ul>
         </div>
 
@@ -1272,7 +1269,6 @@
         </div>
       </div>
 
-      <!-- Bottom -->
       <div class="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
         <p class="text-muted-foreground text-sm">© 2026 محلك - شي إن. جميع الحقوق محفوظة.</p>
         <div class="flex items-center gap-2 text-sm text-muted-foreground">
